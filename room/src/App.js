@@ -6,7 +6,7 @@ import Room from './containers/Room/Room';
 import Home from './containers/Home/Home';
 import About from './components/About/About';
 import Plans from './containers/Plans/Plans';
-import HowItWorks from './components/HowItWorks/HowItWorks';
+import HowItWorks from './containers/HowItWorks/HowItWorks';
 
 class App extends Component {
 
