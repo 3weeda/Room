@@ -1,0 +1,9 @@
+.Desk{
+    margin: auto;
+    position: relative;
+    top:280px;
+    display: inline-block;
+    width: 400px;
+    margin: auto;
+    z-index: 2;
+}

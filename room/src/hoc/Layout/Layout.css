@@ -1,0 +1,8 @@
+.content {
+    margin-top: 72px;
+}
+.button {
+    position: relative;
+    top: 350px;
+    z-index: 500;
+}

@@ -1,0 +1,8 @@
+.Computer{
+    position: relative;
+    bottom: 65px;
+    right: 10px;
+    width: 170px;
+    margin: auto;
+    z-index: 2;
+}

@@ -1,0 +1,10 @@
+.box {
+    position: relative;
+    bottom: 850px;
+    right: 200px;
+    width: 150px;
+    margin: auto;
+}
+.Shelf {
+    position: relative;
+}

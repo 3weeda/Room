@@ -1,0 +1,37 @@
+.SideDrawer {
+    position: fixed;
+    width: 350px;
+    max-width: 70%;
+    height: 100%;
+    left: 0;
+    top:0;
+    z-index: 300;
+    background-color: white;
+    padding: 16px 16px 32px 16px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+}
+.NightMode {
+    background-color: #111319;
+}
+
+.Logo {
+    height: 10%;
+    margin-bottom: 30px;
+}
+
+@media (min-width:800px) {
+    .SideDrawer {
+        display: none;
+    }
+}
+
+.Open {
+    /* shifts the drawer into the position I defined in the above styling */
+    transform: translateX(0) 
+}
+.Close {
+    /* shifts it to the faaaaar left */
+    transform: translateX(-100%)
+}
+

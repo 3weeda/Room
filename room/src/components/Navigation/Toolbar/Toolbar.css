@@ -1,0 +1,44 @@
+.Toolbar {
+    height: 58px;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    border-bottom: 1px solid #e1e1e1;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,0.1);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px 1px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+.NightMode {
+    background-color: #111319 !important;
+    border-bottom: 2px solid #111319 !important;
+    box-shadow: 0 5px 5px -5px rgba(0,0,0,0.15) !important;
+}
+.Transparent {
+    background-color: transparent;
+    border-bottom: none;
+    box-shadow: none;
+}
+.Toolbar nav {
+    height: 100%;
+}
+
+@media (max-width: 799px) {
+    .Toolbar nav {
+        display: none;
+    }
+    .Toolbar {
+        padding-left: 20px;
+    }
+}
+@media (max-width: 400px) {
+    .Toolbar {
+        padding: 10px 15px 1px;
+    }
+}
+

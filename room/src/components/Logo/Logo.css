@@ -1,0 +1,14 @@
+.Logo {
+    color: #111319;
+    height: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.Logo h1 {
+    font-weight: 300;
+    margin-bottom: 35px;
+}
+
+.NightMode {
+    color: white !important;
+}

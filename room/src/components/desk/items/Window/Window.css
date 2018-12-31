@@ -1,0 +1,8 @@
+.box {
+    position: relative;
+    bottom: 1410px;
+    left: 140px;
+    width: 250px;
+    margin: auto;
+    z-index: 1;
+}

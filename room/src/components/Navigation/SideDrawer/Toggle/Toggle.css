@@ -1,0 +1,13 @@
+.DrawerToggle {
+    width: 10px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    z-index: 300;
+}
+
+@media (min-width: 800px) {
+    .DrawerToggle {
+        display: none;
+    }
+}

@@ -1,0 +1,27 @@
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
+  background-image: url(./assets/svg/22-bgTexture.svg), linear-gradient(331deg, rgba(17,19,25,1) 48%, rgba(108,99,153,1) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  user-select: none;
+}
+
+p {
+  user-select: text;
+}
+
