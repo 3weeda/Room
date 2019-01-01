@@ -71,6 +71,56 @@ a {
     background-color: transparent;
     color: #111319;
 }
+.Chunk1 {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-content: center;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+.Chunk1 div {
+    width: 20%;
+    display: inline-block;
+    padding: 0 70px;
+    text-align: center;
+    color: white;
+}
+/* حل مؤقت لحد ما اشوف ايه الحل فيها بقا!!!!! */
+.Chunk1 div:first-child {
+    margin-top: 7px;
+}
+.Chunk1 h4 {
+    font-size: 20px;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #adadad;
+}
+.Chunk1 p {
+    width: 90%;
+    margin: auto;   
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.Chunk {
+    position: relative;
+    bottom: 4px;
+    width: 100%;
+    height: 600px;
+    padding: 10px 0 ;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+
+
+
+
 @media (max-width: 1200px) {
     .Chunk0Text h2 {
         font-size: 40px;
@@ -232,13 +282,3 @@ a {
 }
 
 
-.Chunk {
-    position: relative;
-    bottom: 4px;
-    width: 100%;
-    height: 600px;
-    padding: 10px 0 ;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}

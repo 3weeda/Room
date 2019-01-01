@@ -42,22 +42,20 @@ class Home extends Component {
     }
 
     render() {
-        let text = (
+        const text = (
             <Auxiliary>
                 <p className={classes.P}> Unclutter your life, keep track of everything <br />
                     in one place, enjoy your peace of mind.</p>
-                <Link to="/signup"><button className={classes.Button1}>Get started - It's free</button></Link>
+                <button className={classes.Button1}><Link to="/signup">Get started - It's free</Link></button>
                 <p className={classes.SmallP}> Have an account? <Link to="/login">Log in!</Link></p>
             </Auxiliary>
         )
+        let chunk0Text = text;
         if (this.state.NarrowViewPort) {
-            text = (
-                <section className={classes.Chunk} style={{ backgroundColor: "#fff2f2", height: "160px" }}>
+            chunk0Text = (
+                <section className={classes.Chunk} style={{ backgroundColor: "#fff2f2", height: "180px" }}>
                     <div className={classes.NarrowViewPortText}>
-                        <p className={classes.P}> Unclutter your life, keep track of everything <br />
-                            in one place, enjoy your peace of mind.</p>
-                        <button className={classes.Button1}><Link to="/signup">Get started - It's free</Link></button>
-                        <p className={classes.SmallP}> Have an account? <Link to="/login">Log in!</Link></p>
+                        {text}
                     </div>
                 </section>
             )
@@ -66,17 +64,39 @@ class Home extends Component {
         return (
             <Layout transparent={this.state.transparent}>
                 <div className={classes.Home}>
+                    {/* Chunk0 */}
                     <section className={classes.Chunk0}>
                         <div>
                             <img className={classes.Image} src={Bg} alt="" />
                             <div className={classes.Chunk0Text}>
                                 <h2>All you need, <span>All in one place...</span></h2>
-                                {!this.state.NarrowViewPort ? text : null}
+                                {!this.state.NarrowViewPort ? chunk0Text : null}
                             </div>
                         </div>
                     </section>
-                    {this.state.NarrowViewPort ? text : null}
+                    {/* Chunk0 cont. narrow viewport */}
+                    {this.state.NarrowViewPort ? chunk0Text : null}
+                    {/* Chunk1 */}
                     <section className={classes.Chunk} style={{ backgroundColor: "#111319" }}>
+                        <div className={classes.Chunk1}>
+                            <div>
+                                <img src={require("../../assets/png/idea.png")} alt='Digitize your thoughts' />
+                                <h4>Digitize your thoughts</h4>
+                                <p>Capture and organize notes, files, photos, and voice memos in one place.</p>
+                            </div>
+                            <div>
+                                <img src={require("../../assets/png/smartphone.png")} alt='Access anywhere' />
+                                <h4>Access anywhere</h4>
+                                <p>Find everything instantly on any device you have, no matter where you are.</p>
+                            </div>
+                            <div>
+                                <img src={require("../../assets/png/box.png")} alt="Relaxe, it's safe   " />
+                                <h4>Relax, it's safe</h4>
+                                <p>Safe, secure cloud storage always keeps your information protected and private.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section className={classes.Chunk} style={{ backgroundColor: "#fff2f2" }}>
                         <div></div>
                     </section>
                     <section className={classes.Chunk} style={{ backgroundColor: "#fff2f2" }}>
