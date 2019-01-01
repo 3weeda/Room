@@ -5,8 +5,110 @@
 .Image {
     width: 100%;
     height: auto;
+    display: block;
 }
-.Chunk1 {
+.Chunk0Text {
+    position: absolute;
+    top: 4%;
+    margin-left: 14%;
+    width: 40%;
+    z-index: 1;
+    color: #111319;
+    text-transform: capitalize;
+    display: flex;
+    flex-flow: column;
+}
+.Chunk0Text h2 {
+    font-size: 45px;
+    font-weight: 300;
+    line-height: 55px;
+    margin-bottom: 5px;
+}
+.Chunk0Text p {
+    text-transform: none;
+    color: #535353;
+    font-weight: 500;
+    line-height: 25px;
+    margin: 5px 0 15px;
+}
+.Button {
+    width: 200px;
+    height: 50px;
+    background-color: #111319;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #111319;
+    border-radius: 10px;
+
+}
+.Button:hover {
+    background-color: transparent;
+    color: #111319;
+}
+@media (max-width: 1200px) {
+    .Chunk0Text h2 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .Chunk0Text p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .Button {
+        width: 160px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 1050px) {
+    .Chunk0Text h2 {
+        font-size: 35px;
+        line-height: 45px;
+        margin-bottom: 0;
+    }
+    .Chunk0Text p {
+        font-size: 13px;
+        line-height: 18px;
+        margin-bottom: 12px;
+    }
+
+}
+@media (max-width: 930px) {
+    .Chunk0Text h2 {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 0;
+    }
+    .Chunk0Text p {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 10px;
+    }
+    .Button {
+        width: 140px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+}
+@media (max-width: 850px) {
+    .Chunk0Text {
+        position: absolute;
+        top: 2%
+    }
+    .Button:hover {
+        background-color: white;
+    }
+}
+
+.Chunk {
+    position: relative;
+    bottom: 4px;
     width: 100%;
-    height: 500px;
+    height: 600px;
 }

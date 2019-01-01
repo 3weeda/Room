@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Bg from '../../assets/images/freddie-png compressed final.png';
+import Bg from '../../assets/images/freddie-pngcompressedfinal.png';
 import classes from './Home.css';
 import Layout from '../../hoc/Layout/Layout';
 
@@ -14,7 +14,7 @@ class Home extends Component {
 
     componentDidMount() {
         document.addEventListener('scroll', () => {
-            const isTop = window.scrollY < 130;
+            const isTop = window.scrollY < 100;
             if (isTop !== this.state.isTop) {
                 this.setState({ isTop })
                 this.setState(prevState => ({
@@ -34,9 +34,30 @@ class Home extends Component {
         return (
             <Layout transparent={this.state.transparent}>
                 <div className={classes.Home}>
-                    <img className={classes.Image} src={Bg} alt="" />
-                    <div className={classes.Chunk1}></div>
-                    <div className={classes.Chunk1}></div>
+                    <section className={classes.Chunk0}>
+                        <div>
+                            <img className={classes.Image} src={Bg} alt="" />
+                        <div className={classes.Chunk0Text}>
+                            <h2>All you need,<br /> All in one place... </h2>
+                            <p> Unclutter your life, keep track of everything <br />
+                                in one place, enjoy your peace of mind.</p>
+                            <button className={classes.Button}>Get started - It's free</button>
+                        </div>
+                        </div>
+                    </section>
+                    <section className={classes.Chunk} style={{ backgroundColor: "#111319" }}>
+                        <div></div>
+                    </section>
+                    <section className={classes.Chunk} style={{ backgroundColor: "#fff2f2" }}>
+                        <div></div>
+                    </section>
+                    <section className={classes.Chunk} style={{ backgroundColor: "#fff2f2" }}>
+                        <div></div>
+                    </section>
+                    <section className={classes.Chunk} style={{ backgroundColor: "#111319", height: "300px" }}>
+                        <div></div>
+                    </section>
+
                 </div>
             </Layout>
         );
