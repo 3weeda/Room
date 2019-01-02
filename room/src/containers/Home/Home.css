@@ -1,3 +1,8 @@
+a {
+    text-decoration: none;
+    box-sizing: border-box;
+    color: inherit;
+}
 .Home {
     position: absolute;
     top: 0;
@@ -24,14 +29,30 @@
     line-height: 55px;
     margin-bottom: 5px;
 }
-.Chunk0Text p {
+.Chunk0Text h2 span {
+    white-space: nowrap;
+}
+.P {
     text-transform: none;
     color: #535353;
     font-weight: 500;
     line-height: 25px;
     margin: 5px 0 15px;
 }
-.Button {
+.SmallP {
+    font-size: 13px;
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #535353;
+}
+.SmallP a {
+    color: #111319;
+    font-weight: 500;
+}
+.SmallP a:hover {
+    text-decoration: underline;
+}
+.Button1 {
     width: 200px;
     height: 50px;
     background-color: #111319;
@@ -45,51 +66,170 @@
     text-align: center;
     border: 1px solid #111319;
     border-radius: 10px;
-
 }
-.Button:hover {
+.Button1:hover, .Button1 a:hover {
     background-color: transparent;
     color: #111319;
 }
+
+
+.Chunk1 {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+.Chunk1 div {
+    width: 20%;
+    display: inline-block;
+    padding: 0 70px;
+    text-align: center;
+    color: white;
+}
+.Chunk1 h4 {
+    font-size: 18px;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #adadad;
+    text-transform: uppercase;
+}
+.Chunk1 p {
+    width: 90%;
+    margin: auto;   
+    font-size: 15px;
+    line-height: 25px;
+    padding-top: 10px;
+}
+/* تشانك1 وتشانك2 متكررين نفس الحاجه بالظبط ف لو مفيش فرق حطهم ف تشانك وشيلهم خالص */
+.Chunk2 {
+    margin: auto;
+    text-align: center;
+    display: inline;
+    box-sizing: border-box;
+    vertical-align: baseline;
+    padding: 50px 120px 0 120px;
+}
+.RememberVector {
+    width: 35%;
+    float: left;
+    padding-left: 30px;
+}
+.RememberVector img {
+    width: 100%;
+}
+.RememberText {
+    float: right;
+    width: 40%;
+    margin-top: 30px;
+    padding-right: 60px;
+    text-align: left;
+}
+.RememberText h2 {
+    font-size: 28px;
+    line-height: 1.3em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.RememberText p {
+    width: 90%;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 30px;
+}
+.RememberText a {
+    transition: all 0.5s;
+    position: relative;
+    color: #31878d;
+    text-transform: capitalize;
+}
+.RememberText a:after {
+    content: '🡢';
+    position: absolute;
+    opacity: 0;
+    right: -15px;
+    transition: 0.5s;
+}
+.RememberText a:hover{
+    padding-right: 24px;
+    text-decoration: underline;
+}
+.RememberText a:hover:after {
+    opacity: 1;
+    right: -2px;
+}
+
+
+.Chunk {
+    position: relative;
+    bottom: 4px;
+    width: 100%;
+    height: 600px;
+    padding: 10px 0 ;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+
+
+
+
 @media (max-width: 1200px) {
     .Chunk0Text h2 {
         font-size: 40px;
         line-height: 50px;
     }
-    .Chunk0Text p {
+    .P {
         font-size: 14px;
         line-height: 20px;
     }
-    .Button {
+    .SmallP {
+        font-size: 12px;
+        margin-left: 3px;
+    }    
+    .Button1 {
         width: 160px;
         font-size: 14px;
     }
 }
 @media (max-width: 1050px) {
+    .Chunk0Text {
+        position: absolute;
+        top: 3%
+    }
     .Chunk0Text h2 {
         font-size: 35px;
         line-height: 45px;
         margin-bottom: 0;
     }
-    .Chunk0Text p {
+    .P {
         font-size: 13px;
         line-height: 18px;
         margin-bottom: 12px;
     }
 
 }
-@media (max-width: 930px) {
+@media (max-width: 980px) {
     .Chunk0Text h2 {
         font-size: 30px;
         line-height: 40px;
         margin-bottom: 0;
     }
-    .Chunk0Text p {
+    .P {
         font-size: 12px;
         line-height: 16px;
         margin-bottom: 10px;
     }
-    .Button {
+    .SmallP {
+        font-size: 10px;
+        margin-left: 5px;
+    }    
+    .Button1 {
         width: 140px;
         height: 40px;
         font-size: 12px;
@@ -101,14 +241,102 @@
         position: absolute;
         top: 2%
     }
-    .Button:hover {
-        background-color: white;
+    .SmallP {
+        display: none;
+    }    
+}
+@media (max-width: 800px) {
+    .Chunk0Text {
+        position: absolute;
+        top: 1.5%;
+        margin-left: 9%;
+        width: 60%;
+    }
+    .Chunk0Text h2 {
+        font-size: 25px;
+    }
+    .Chunk0Text h2 span {
+        white-space: normal;
+    }
+    .Button1 {
+        margin-left: 50px;
+    }
+}
+@media (max-width: 651px) {
+    .Chunk0Text {
+        position: absolute;
+        width: 40%;
+        margin-left: 12%;
+    }
+    .Chunk0Text h2 {
+        font-size: 30px;
+    }
+    .Chunk0Text h2 span {
+        white-space: nowrap;
+    }
+    .P {
+        font-size: 16px;
+        padding-bottom: 20px;
+        line-height: 30px;
+        font-weight: 400;
+        color: #111319;
+        margin-bottom: 0;
+        text-align: center;
+    }
+    .SmallP {
+        display: block;
+        color: #111319;
+        font-size: 12px;
+    }    
+    .NarrowViewPortText {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 20px;
+    }
+    .Button1 {
+        width: 90%;
+        height: 50px;
+        font-size: 16px;
+        font-weight: 400;
+        margin-left: 0;
+    }
+
+}
+@media (max-width: 530px) {
+    .Chunk0Text h2 {
+        font-size: 25px;
+        line-height: 30px;
+    }
+    .P {
+        font-size: 14px;
+        line-height: 25px;
+    }
+    .Button1 {
+        width: 80%;
+        font-size: 14px;
+    }
+}
+@media (max-width: 450px) {
+    .Chunk0Text h2 {
+        font-size: 20px;
+        line-height: 25px;
+    }
+}
+@media (max-width: 380px) {
+    .Chunk0Text h2 {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .P {
+        white-space: nowrap;
+        font-size: 12px;
+        line-height: 22px;
+    }
+    .SmallP {
+        margin-top: 10px;
+        font-size: 10px;
     }
 }
 
-.Chunk {
-    position: relative;
-    bottom: 4px;
-    width: 100%;
-    height: 600px;
-}
+

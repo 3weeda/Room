@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import Bg from '../../assets/images/freddie-pngcompressedfinal.png';
 import classes from './Home.css';
 import Layout from '../../hoc/Layout/Layout';
+import Auxiliary from '../../hoc/Auxiliary/Auxiliary';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
     state = {
         transparent: true,
         isTop: true,
+        NarrowViewPort: false
     }
     componentWillMount() {
         window.scrollTo(0, 0)
@@ -14,7 +17,7 @@ class Home extends Component {
 
     componentDidMount() {
         document.addEventListener('scroll', () => {
-            const isTop = window.scrollY < 100;
+            const isTop = window.scrollY < 30;
             if (isTop !== this.state.isTop) {
                 this.setState({ isTop })
                 this.setState(prevState => ({
@@ -22,6 +25,14 @@ class Home extends Component {
                 }))
             }
         })
+        this.updateChunk0NarrowHandler();
+        window.addEventListener("resize", this.updateChunk0NarrowHandler);
+    }
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateChunk0NarrowHandler)
+    }
+    updateChunk0NarrowHandler = () => {
+        this.setState({ NarrowViewPort: window.innerWidth < 652 })
     }
 
     showToolbarBgHandler = () => {
@@ -31,28 +42,76 @@ class Home extends Component {
     }
 
     render() {
+        const text = (
+            <Auxiliary>
+                <p className={classes.P}> Unclutter your life, keep track of everything <br />
+                    in one place, enjoy your peace of mind.</p>
+                <button className={classes.Button1}><Link to="/signup">Get started - It's free</Link></button>
+                <p className={classes.SmallP}> Have an account? <Link to="/login">Log in!</Link></p>
+            </Auxiliary>
+        )
+        let chunk0Text = text;
+        if (this.state.NarrowViewPort) {
+            chunk0Text = (
+                <section className={classes.Chunk} style={{ backgroundColor: "#fff2f2", height: "180px" }}>
+                    <div className={classes.NarrowViewPortText}>
+                        {text}
+                    </div>
+                </section>
+            )
+        }
+
         return (
             <Layout transparent={this.state.transparent}>
                 <div className={classes.Home}>
+                    {/* Chunk0 */}
                     <section className={classes.Chunk0}>
                         <div>
                             <img className={classes.Image} src={Bg} alt="" />
-                        <div className={classes.Chunk0Text}>
-                            <h2>All you need,<br /> All in one place... </h2>
-                            <p> Unclutter your life, keep track of everything <br />
-                                in one place, enjoy your peace of mind.</p>
-                            <button className={classes.Button}>Get started - It's free</button>
-                        </div>
+                            <div className={classes.Chunk0Text}>
+                                <h2>All you need, <span>All in one place...</span></h2>
+                                {!this.state.NarrowViewPort ? chunk0Text : null}
+                            </div>
                         </div>
                     </section>
+                    {/* Chunk0 cont. narrow viewport */}
+                    {this.state.NarrowViewPort ? chunk0Text : null}
+                    {/* Chunk1 */}
                     <section className={classes.Chunk} style={{ backgroundColor: "#111319" }}>
-                        <div></div>
+                        <div className={classes.Chunk1}>
+                            <div>
+                                <img src={require("../../assets/png/idea.png")} alt='Digitize your thoughts' />
+                                <h4>Digitize your thoughts</h4>
+                                <p>Capture and organize notes, files, photos, and voice memos in one place.</p>
+                            </div>
+                            <div>
+                                <img src={require("../../assets/png/smartphone.png")} alt='Access anywhere' />
+                                <h4>Access anywhere</h4>
+                                <p>Find everything instantly on any device you have, no matter where you are.</p>
+                            </div>
+                            <div>
+                                <img src={require("../../assets/png/box.png")} alt="Relaxe, it's safe   " />
+                                <h4>Relax, it's safe</h4>
+                                <p>Safe, secure cloud storage always keeps your information protected and private.</p>
+                            </div>
+                        </div>
                     </section>
-                    <section className={classes.Chunk} style={{ backgroundColor: "#fff2f2" }}>
-                        <div></div>
+                    <section className={classes.Chunk} style={{ backgroundColor: "white" }}>
+                        <div className={classes.Chunk2}>
+                            <div className={classes.RememberVector}>
+                                <img src={require("../../assets/png/remember.png")} alt="A man taking notes on Room" />
+                            </div>
+                            <div className={classes.RememberText}>
+                                <h2>Never worry about forgetting things again</h2>
+                                <p>Let Room remember it all for you. You can get tasks out of your head and onto your to-do list anytime, anywhere, on any device, even offline.</p>
+                                <Link to="/tour">See how it works</Link>
+                            </div>
+                        </div>
                     </section>
-                    <section className={classes.Chunk} style={{ backgroundColor: "#fff2f2" }}>
-                        <div></div>
+                    <section className={classes.Chunk} style={{ backgroundColor: "white" }}>
+                        <div className={classes.Chunk3}>
+
+                        </div>
                     </section>
                     <section className={classes.Chunk} style={{ backgroundColor: "#111319", height: "300px" }}>
                         <div></div>
