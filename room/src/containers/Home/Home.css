@@ -71,9 +71,6 @@ a {
     background-color: transparent;
     color: #111319;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 
 .Chunk1 {
     margin: auto;
@@ -128,7 +125,7 @@ a {
     float: right;
     width: 40%;
     margin-top: 30px;
-    padding-right: 60px;
+    margin-right: 60px;
     text-align: left;
 }
 .RememberText h2 {
@@ -139,8 +136,9 @@ a {
 }
 .RememberText p {
     width: 90%;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
     margin-bottom: 30px;
 }
 .RememberText a {
@@ -153,8 +151,8 @@ a {
     content: '🡢';
     position: absolute;
     opacity: 0;
-    right: -15px;
-    transition: 0.5s;
+    right: -20px;
+    transition: 0.4s;
 }
 .RememberText a:hover{
     padding-right: 24px;
@@ -162,7 +160,7 @@ a {
 }
 .RememberText a:hover:after {
     opacity: 1;
-    right: -2px;
+    right: 2px;
 }
 
 
@@ -177,116 +175,91 @@ a {
     box-sizing: border-box;
 }
 
-
-
-
-
-||||||| merged common ancestors
-=======
-.Chunk1 {
-    margin: auto;
-    text-align: center;
-    display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-    align-content: center;
+.Chunk3 {
+    position: relative;
+    bottom: 4px;
+    background-color: white;
+    width: 100%;
+    height: 550px;
+    padding: 10px 10%;
     box-sizing: border-box;
-    vertical-align: baseline;
+    margin-right: auto;
+    margin-left: auto;
 }
-.Chunk1 div {
-    width: 20%;
-    display: inline-block;
-    padding: 0 70px;
-    text-align: center;
-    color: white;
+.Chunk3 header {
+    width: 50%;
 }
-/* حل مؤقت لحد ما اشوف ايه الحل فيها بقا!!!!! */
-.Chunk1 div:first-child {
-    margin-top: 7px;
+.Chunk3 h2 {
+    line-height: 30px;
+    margin-bottom: 10px;
 }
-.Chunk1 h4 {
-    font-size: 20px;
-    font-weight: 400;
-    padding-top: 10px;
-    padding-bottom: 60px;
-    border-bottom: 1px solid #adadad;
-}
-.Chunk1 p {
+.Chunk3 header p {
     width: 90%;
-    margin: auto;   
-    font-size: 16px;
-    line-height: 25px;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-weight: 500;
 }
-
-.Chunk {
-    position: relative;
-    bottom: 4px;
-    width: 100%;
-    height: 600px;
-    padding: 10px 0 ;
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
+.GridContainer {
+    display: grid;
+    grid-template-areas: "quote logo1 logo2"
+                         "quote logo3 logo4";
+    grid-gap: 2em;
+    grid-template-columns: 50% 22% 22%;
+    grid-template-rows: 45% 45%;
 }
-
-
-
-
-
->>>>>>> ec0c5b053f937ac01a7dc17fb77041ff2e93f2a4
-||||||| merged common ancestors
-=======
-.Chunk1 {
-    margin: auto;
-    text-align: center;
-    display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-    align-content: center;
-    box-sizing: border-box;
-    vertical-align: baseline;
+.Quote {
+    grid-area: quote;
+    background-color: #f7f7f7;
+    padding: 20px;
 }
-.Chunk1 div {
-    width: 20%;
+.Quote blockquote {
+    width: 80%;
+    font-size: 17px;
+    line-height: 30px;
+    font-style: italic;
+    border-left: 2px solid #e44232;
+    padding-left: 20px;
+    margin-left: 10px;
+    margin-bottom: 40px;
+}
+.Person img {
+    width: 48px;
+    padding-right: 20px;
+}
+.Person div {
+    font-size: 14px;
+    line-height: 8px;
     display: inline-block;
-    padding: 0 70px;
+    vertical-align: top;
+}
+.Person p {
+    margin-top: 10px;
+}
+.Logo {
+    background-color: #f7f7f7;
     text-align: center;
-    color: white;
-}
-/* حل مؤقت لحد ما اشوف ايه الحل فيها بقا!!!!! */
-.Chunk1 div:first-child {
-    margin-top: 7px;
-}
-.Chunk1 h4 {
-    font-size: 20px;
-    font-weight: 400;
-    padding-top: 10px;
-    padding-bottom: 60px;
-    border-bottom: 1px solid #adadad;
-}
-.Chunk1 p {
-    width: 90%;
-    margin: auto;   
-    font-size: 16px;
-    line-height: 25px;
-}
-
-.Chunk {
-    position: relative;
-    bottom: 4px;
-    width: 100%;
-    height: 600px;
-    padding: 10px 0 ;
     display: flex;
     justify-content: center;
-    box-sizing: border-box;
+}
+.Logo1 {
+    grid-area: logo1;
+}
+.Logo2 {
+    grid-area: logo2;
+}
+.Logo3 {
+    grid-area: logo3;
+}
+.Logo4 {
+    grid-area: logo4;
+}
+.Chunk4 {
+    height: 200px;
 }
 
 
 
-
-
->>>>>>> ec0c5b053f937ac01a7dc17fb77041ff2e93f2a4
 @media (max-width: 1200px) {
     .Chunk0Text h2 {
         font-size: 40px;
@@ -305,7 +278,7 @@ a {
         font-size: 14px;
     }
 }
-@media (max-width: 1050px) {
+@media (max-width: 1100px) {
     .Chunk0Text {
         position: absolute;
         top: 3%
