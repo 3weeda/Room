@@ -5,7 +5,6 @@
     outline: none;
     cursor: pointer;
     font: inherit;
-    padding: 10px;
     text-align: center;
 }
 
@@ -58,6 +57,26 @@
     border: 1px solid white;
     color: #111319;
     font-weight: 500;
+}
+
+.Login {
+    color: #6f6f6f;
+    font-size: 16px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+.Login:hover {
+    color: #111319;
+}
+.LoginNightMode {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    padding-bottom: 10px;
+}
+.LoginNightMode:hover {
+    color: #31878d;
 }
 @media (max-width: 799px) {
     .Square {

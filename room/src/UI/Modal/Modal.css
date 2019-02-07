@@ -1,8 +1,7 @@
 .Modal {
     position: fixed;
     z-index: 500;
-    background-color: white;
-    width: 70%;
+    width: 50%;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px black;
     padding: 16px;
@@ -11,10 +10,17 @@
     box-sizing: border-box;
     transition: all 0.3s ease-out;
 }
+.Close {
+    float: right;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    fill: #111319;
+}
 
 @media (min-width: 600px) {
-    .Modal {
-        width: 500px;
-        left: calc(50% - 250px);
+    .Modal, .ModalNightMode {
+        width: 400px;
+        left: calc(50% - 200px);
     }
 }

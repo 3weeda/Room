@@ -27,7 +27,10 @@ const SideDrawer = (props) => {
                     <Logo nightMode={props.nightMode} />
                 </div>
                 <nav onClick={props.closed}>
-                    <NavigationItems nightMode={props.nightMode} />
+                    <NavigationItems 
+                    nightMode={props.nightMode}
+                    showSignup={props.showSignup}
+                    showSignin={props.showSignin} />
                 </nav>
             </div>
         </Auxiliary>

@@ -2,7 +2,6 @@ import React from 'react';
 import NavigationItem from './NavigationItem/NavigationItem';
 import classes from './NavigationItems.css';
 import Button from '../../../UI/Button/Button';
-import { Link } from 'react-router-dom';
 
 const NavigationItems = (props) => {
     return (
@@ -11,8 +10,12 @@ const NavigationItems = (props) => {
             <NavigationItem nightMode={props.nightMode} link="/tour">How It Works</NavigationItem>
             <NavigationItem nightMode={props.nightMode} link="/plans">Plans</NavigationItem>
             <NavigationItem nightMode={props.nightMode} link="/about">About Us</NavigationItem>
-            <NavigationItem nightMode={props.nightMode} link="/login">Log In</NavigationItem>
-            <Link to="/signup"><Button btnType= {props.nightMode ? "SquareNightMode" : "Square"}>Sign Up</Button></Link>
+            <Button
+                btnType={props.nightMode ? "LoginNightMode" : "Login"}
+                clicked={props.showSignin}>Log in</Button>
+            <Button
+                btnType={props.nightMode ? "SquareNightMode" : "Square"}
+                clicked={props.showSignup}>Sign up</Button>
         </ul>
     );
 };

@@ -4,6 +4,7 @@ import classes from './Home.css';
 import Layout from '../../hoc/Layout/Layout';
 import Auxiliary from '../../hoc/Auxiliary/Auxiliary';
 import { Link } from 'react-router-dom';
+import avatar from '../../assets/png/avatar-ahmad.png';
 
 class Home extends Component {
 	state = {
@@ -31,14 +32,9 @@ class Home extends Component {
 	componentWillUnmount() {
 		window.removeEventListener("resize", this.updateChunk0NarrowHandler)
 	}
+	//Edit chunk0 responsively at 652 px
 	updateChunk0NarrowHandler = () => {
 		this.setState({ NarrowViewPort: window.innerWidth < 652 })
-	}
-
-	showToolbarBgHandler = () => {
-		this.setState(prevState => ({
-			transparent: !prevState.transparent
-		}))
 	}
 
 	render() {
@@ -46,7 +42,7 @@ class Home extends Component {
 			<Auxiliary>
 				<p className={classes.P}> Unclutter your life, keep track of everything <br />
 					in one place, enjoy your peace of mind.</p>
-				<button className={classes.Button1}><Link to="/signup">Get started - It's free</Link></button>
+				<button className={classes.Button1}><Link to="/signup" className={classes.trial}>Get started - It's free</Link></button>
 				<p className={classes.SmallP}> Have an account? <Link to="/login">Log in!</Link></p>
 			</Auxiliary>
 		)
@@ -112,7 +108,7 @@ class Home extends Component {
 						<div className={classes.Chunk3}>
 							<div>
 								<header>
-									<h2>Todoist helps over 10 million people feel more in control of their lives</h2>
+									<h2>Room helps over 1 million people feel more in control of their lives</h2>
 									<p>and is trusted by leaders at some of the world’s most inspired organizations.</p>
 								</header>
 								<div className={classes.GridContainer}>
@@ -125,7 +121,7 @@ class Home extends Component {
 										</blockquote>
 										<footer>
 											<div className={classes.Person}>
-												<img src="https://d3ptyyxy2at9ui.cloudfront.net/avatar-matija-b-44ba54.png" alt="Ahmad Eweida" />
+												<img src={avatar} alt="Ahmad Eweida" />
 												<div>
 													<p>Ahmad Eweida</p>
 													<p>Founder of Room</p>
@@ -150,10 +146,10 @@ class Home extends Component {
 						</div>
 					</section>
 					<section className={classes.Chunk} style={{ backgroundColor: "white" }}>
-					<div className={classes.Chunk4}>
-					<h2>Make life easier with Room</h2>
-					<button className={classes.Button1}><Link to="/signup">Get started - It's free</Link></button>
-					</div>
+						<div className={classes.Chunk4}>
+							{/* <h2>Make life easier with Room</h2>
+							<button className={classes.Button1}><Link to="/signup">Get started - It's free</Link></button> */}
+						</div>
 					</section>
 					<section className={classes.Chunk} style={{ backgroundColor: "#111319", height: "300px" }}>
 						<div></div>

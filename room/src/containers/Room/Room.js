@@ -17,6 +17,7 @@ import Clock from '../../components/desk/items/Clock/Clock';
 import Windo from '../../components/desk/items/Window/Window';
 import Lamp from '../../components/desk/items/Lamp/Lamp';
 import LampLight from '../../components/desk/items/LampLight/LampLight';
+import Layout from '../../hoc/Layout/Layout';
 
 class Room extends Component {
     state = {
@@ -31,25 +32,29 @@ class Room extends Component {
 
     render() {
         return (
-            <div className={classes.Room}>
-                <Desk />
-                <Computer />
-                <Cactus />
-                <Floor />
-                <FloorShadow />
-                <Speaker />
-                <HorizontalBooks />
-                <Plant />
-                <Chair />
-                <Shelf />
-                <VerticalBooks />
-                <Kandle />
-                <Vase />
-                <Clock size={240} hourFormat="roman" timeFormat="standard" />
-                <Windo />
-                <Lamp lightSwitch={this.lightSwitchHandler} />
-                <LampLight light={this.state.light} />
-            </div>
+            <Layout>
+                <div className={classes.Container}>
+                    <div className={classes.Room}>
+                        <Desk />
+                        <Computer />
+                        <Cactus />
+                        <Floor />
+                        <FloorShadow />
+                        <Speaker />
+                        <HorizontalBooks />
+                        <Plant />
+                        <Chair />
+                        <Shelf />
+                        <VerticalBooks />
+                        <Kandle />
+                        <Vase />
+                        <Clock size={240} hourFormat="roman" timeFormat="standard" />
+                        <Windo />
+                        <Lamp lightSwitch={this.lightSwitchHandler} />
+                        <LampLight light={this.state.light} />
+                    </div>
+                </div>
+            </Layout>
         );
     }
 }
