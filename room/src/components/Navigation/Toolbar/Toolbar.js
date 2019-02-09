@@ -3,10 +3,6 @@ import classes from './Toolbar.css'
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import Toggle from '../SideDrawer/Toggle/Toggle';
-import { connect } from 'react-redux';
-import * as actionCreators from '../../../store/actions/index';
-// import NightModeToggle from '../../../hoc/Layout/nightModeToggle/NightModeToggle'
-
 
 const Toolbar = (props) => {
     return (
@@ -25,24 +21,12 @@ const Toolbar = (props) => {
                 <NavigationItems 
                 nightMode={props.nightMode}
                 showSignup={props.showSignup}
-                showSignin={props.showSignin} />
+                showSignin={props.showSignin}
+                isAuth={props.isAuth}
+                logout={props.logout} />
             </nav>
-            {/* <NightModeToggle
-                clicked={props.onToggleNightMode}
-                nightMode={props.nightMode} /> */}
         </header>
     );
 };
 
-const mapStateToProps = state => {
-    return {
-        nightMode: state.room.nightMode
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        onToggleNightMode: () => dispatch(actionCreators.toggleNightMode())
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Toolbar);
+export default Toolbar;

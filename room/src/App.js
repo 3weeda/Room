@@ -15,12 +15,13 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route path="/tour" component={HowItWorks} />
-          <Route path="/room" component={Room} />
+          {this.props.isAuthenticated ? <Route path="/room" component={Room}/> : null }
           <Route path="/about" component={About} />
           <Route path="/plans" component={Plans} />
           <Route path="/" exact component={Home} />
           <Redirect to="/" />
         </Switch>
+
       </div>
     );
   }
@@ -28,13 +29,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
+    isAuthenticated: state.auth.token !== null
   }
 }
 
-
-const mapDispatchToProps = dispatch => {
-  return {
-  }
-}
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps)(App));

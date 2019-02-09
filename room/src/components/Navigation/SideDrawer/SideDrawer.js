@@ -30,7 +30,9 @@ const SideDrawer = (props) => {
                     <NavigationItems 
                     nightMode={props.nightMode}
                     showSignup={props.showSignup}
-                    showSignin={props.showSignin} />
+                    showSignin={props.showSignin}
+                    isAuth={props.isAuth}
+                    logout={props.logout} />
                 </nav>
             </div>
         </Auxiliary>
