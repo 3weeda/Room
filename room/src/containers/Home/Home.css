@@ -80,6 +80,11 @@ a {
 }
 
 .Chunk1 {
+    position: relative;
+    bottom: 4px;
+    width: 100%;
+    height: 600px;
+    padding: 10px 0 ;
     margin: auto;
     text-align: center;
     display: flex;
@@ -111,14 +116,16 @@ a {
     line-height: 25px;
     padding-top: 10px;
 }
-/* تشانك1 وتشانك2 متكررين نفس الحاجه بالظبط ف لو مفيش فرق حطهم ف تشانك وشيلهم خالص */
 .Chunk2 {
+    position: relative;
+    bottom: 4px;
+    height: 600px;
+    display: inline-block;
     margin: auto;
     text-align: center;
-    display: inline;
     box-sizing: border-box;
     vertical-align: baseline;
-    padding: 50px 120px 0 120px;
+    padding: 150px 120px 0 120px;
 }
 .RememberVector {
     width: 35%;
@@ -148,46 +155,41 @@ a {
     line-height: 25px;
     margin-bottom: 30px;
 }
-.RememberText a {
+.RememberText a, .Chunk3Footer a {
     transition: all 0.5s;
     position: relative;
     color: #31878d;
     text-transform: capitalize;
 }
-.RememberText a:after {
+.RememberText a:after, .Chunk3Footer a:after {
     content: '🡢';
     position: absolute;
     opacity: 0;
     right: -20px;
     transition: 0.4s;
 }
-.RememberText a:hover{
+.RememberText a:hover, .Chunk3Footer a:hover{
     padding-right: 24px;
     text-decoration: underline;
 }
-.RememberText a:hover:after {
+.RememberText a:hover:after, .Chunk3Footer a:hover:after {
     opacity: 1;
     right: 2px;
 }
 
 
-.Chunk {
-    position: relative;
+
+.Chunk3 {
     bottom: 4px;
     width: 100%;
-    height: 600px;
+    height: 500px;
     padding: 10px 0 ;
     display: flex;
     justify-content: center;
-    box-sizing: border-box;
-}
-
-.Chunk3 {
     position: relative;
     bottom: 4px;
     background-color: white;
     width: 100%;
-    height: 550px;
     padding: 10px 10%;
     box-sizing: border-box;
     margin-right: auto;
@@ -261,10 +263,22 @@ a {
 .Logo4 {
     grid-area: logo4;
 }
-.Chunk4 {
-    height: 100px;
+.Chunk3Footer {
+    text-align: center;
+    padding: 20px 50px 60px;
+    vertical-align: middle;
 }
-
+.Chunk3Footer h2 {
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.Chunk3Footer button {
+    width: 320px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: 500 !important;
+    margin-bottom: 20px;
+}
 
 
 @media (max-width: 1200px) {

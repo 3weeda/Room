@@ -9,6 +9,7 @@ import * as actionCreators from '../../store/actions/index'
 import avatar from '../../assets/png/avatar-ahmad.png';
 import Button from '../../UI/Button/Button';
 import Auth from '../Auth/Auth';
+import Footer from '../../Shared/Footer/Footer';
 
 class Home extends Component {
 	state = {
@@ -54,7 +55,7 @@ class Home extends Component {
 		let chunk0Text = text;
 		if (this.state.NarrowViewPort) {
 			chunk0Text = (
-				<section className={classes.Chunk} style={{ backgroundColor: "#fff2f2", height: "180px" }}>
+				<section style={{ backgroundColor: "#fff2f2", height: "180px" }}>
 					<div className={classes.NarrowViewPortText}>
 						{text}
 					</div>
@@ -64,11 +65,11 @@ class Home extends Component {
 
 		return (
 			<Layout transparent={this.state.transparent}>
-                <Auth
-                    modalVisible={this.props.modalVisible}
-                    closeModal={this.props.onCloseModal}
-                    isSignup={this.props.isSignup}
-                    nightMode={this.props.nightMode} />
+				<Auth
+					modalVisible={this.props.modalVisible}
+					closeModal={this.props.onCloseModal}
+					isSignup={this.props.isSignup}
+					nightMode={this.props.nightMode} />
 				<div className={classes.Home}>
 					{/* Chunk0 */}
 					<section className={classes.Chunk0}>
@@ -83,7 +84,7 @@ class Home extends Component {
 					{/* Chunk0 cont. narrow viewport */}
 					{this.state.NarrowViewPort ? chunk0Text : null}
 					{/* Chunk1 */}
-					<section className={classes.Chunk} style={{ backgroundColor: "#111319" }}>
+					<section style={{ backgroundColor: "#111319" }}>
 						<div className={classes.Chunk1}>
 							<div>
 								<img src={require("../../assets/png/idea.png")} alt='Digitize your thoughts' />
@@ -102,7 +103,7 @@ class Home extends Component {
 							</div>
 						</div>
 					</section>
-					<section className={classes.Chunk} style={{ backgroundColor: "white" }}>
+					<section style={{ backgroundColor: "white" }}>
 						<div className={classes.Chunk2}>
 							<div className={classes.RememberVector}>
 								<img src={require("../../assets/png/remember.png")} alt="A man taking notes on Room" />
@@ -154,17 +155,13 @@ class Home extends Component {
 								</div>
 							</div>
 						</div>
-					</section>
-					<section className={classes.Chunk} style={{ backgroundColor: "white" }}>
-						<div className={classes.Chunk4}>
-							{/* <h2>Make life easier with Room</h2>
-							<button className={classes.Button1}><Link to="/signup">Get started - It's free</Link></button> */}
+						<div className={classes.Chunk3Footer}>
+							<h2>Make life easier with Room</h2>
+							<button className={classes.Button1} onClick={this.props.onSignup}>Get started - It's free</button>
+							<div><Link to="/tour">See how it works</Link></div>
 						</div>
 					</section>
-					<section className={classes.Chunk} style={{ backgroundColor: "#111319", height: "300px" }}>
-						<div></div>
-					</section>
-
+					<Footer />
 				</div>
 			</Layout>
 		);

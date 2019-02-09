@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Layout from '../../hoc/Layout/Layout';
 import classes from './HowItWorks.css'
+import Footer from '../../Shared/Footer/Footer';
 
 class HowItWorks extends Component {
 
@@ -14,6 +15,7 @@ class HowItWorks extends Component {
                 <div className={classes.Chunk1}>
                     <h1>TOUR</h1>
                 </div>
+                <Footer />
             </Layout>
         );
     }
