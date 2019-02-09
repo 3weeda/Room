@@ -1,3 +1,13 @@
 export {
     toggleNightMode,
-} from './room'
+} from './nightMode'
+
+export {
+    auth,
+    logout,
+    authCheckState,
+    signupOn,
+    loginOn,
+    modalOn,
+    modalOff
+} from './auth'

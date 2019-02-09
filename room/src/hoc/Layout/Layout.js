@@ -11,8 +11,6 @@ import Auth from '../../containers/Auth/Auth';
 class Layout extends Component {
     state = {
         visible: false,
-        modalVisible: false,
-        isSignup: true
     }
 
     hideSideDrawerHandler = () => {
@@ -25,16 +23,6 @@ class Layout extends Component {
         }))
     }
 
-    signupHandler = () => {
-        this.setState({ modalVisible: true, isSignup: true });
-    }
-    signinHandler = () => {
-        this.setState({ modalVisible: true, isSignup: false })
-    }
-    closeModalHandler = () => {
-        this.setState({ modalVisible: false });
-    }
-
     render() {
         return (
             <Auxiliary>
@@ -42,19 +30,23 @@ class Layout extends Component {
                     toggle={this.toggleMenuHandler}
                     transparent={this.props.transparent}
                     nightMode={this.props.nightMode}
-                    showSignup={this.signupHandler}
-                    showSignin={this.signinHandler} />
+                    showSignup={this.props.onSignup}
+                    showSignin={this.props.onLogIn}
+                    isAuth={this.props.isAuthenticated}
+                    logout={this.props.onLogout} />
                 <SideDrawer
                     toggle={this.toggleMenuHandler}
                     open={this.state.visible}
                     closed={this.hideSideDrawerHandler}
                     nightMode={this.props.nightMode}
-                    showSignup={this.signupHandler}
-                    showSignin={this.signinHandler} />
+                    showSignup={this.props.onSignup}
+                    showSignin={this.props.onLogIn}
+                    isAuth={this.props.isAuthenticated}
+                    logout={this.props.onLogout} />
                 <Auth
-                    modalVisible={this.state.modalVisible}
-                    closeModal={this.closeModalHandler}
-                    isSignup={this.state.isSignup}
+                    modalVisible={this.props.modalVisible}
+                    closeModal={this.props.onCloseModal}
+                    isSignup={this.props.isSignup}
                     nightMode={this.props.nightMode} />
 
                 <main className={classes.content}>
@@ -71,13 +63,20 @@ class Layout extends Component {
 
 const mapStateToProps = state => {
     return {
-        nightMode: state.room.nightMode
+        nightMode: state.nightMode.nightMode,
+        modalVisible: state.auth.modalVisible,
+        isSignup: state.auth.isSignup,
+        isAuthenticated: state.auth.token !== null
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onToggleNightMode: () => dispatch(actionCreators.toggleNightMode())
+        onToggleNightMode: () => dispatch(actionCreators.toggleNightMode()),
+        onSignup: () => dispatch(actionCreators.signupOn()),
+        onLogIn: () => dispatch(actionCreators.loginOn()),
+        onCloseModal: () => dispatch(actionCreators.modalOff()),
+        onLogout: () => dispatch(actionCreators.logout())
     }
 }
 

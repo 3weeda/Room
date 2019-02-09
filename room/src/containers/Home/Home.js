@@ -4,7 +4,11 @@ import classes from './Home.css';
 import Layout from '../../hoc/Layout/Layout';
 import Auxiliary from '../../hoc/Auxiliary/Auxiliary';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actionCreators from '../../store/actions/index'
 import avatar from '../../assets/png/avatar-ahmad.png';
+import Button from '../../UI/Button/Button';
+import Auth from '../Auth/Auth';
 
 class Home extends Component {
 	state = {
@@ -42,8 +46,9 @@ class Home extends Component {
 			<Auxiliary>
 				<p className={classes.P}> Unclutter your life, keep track of everything <br />
 					in one place, enjoy your peace of mind.</p>
-				<button className={classes.Button1}><Link to="/signup" className={classes.trial}>Get started - It's free</Link></button>
-				<p className={classes.SmallP}> Have an account? <Link to="/login">Log in!</Link></p>
+				<button className={classes.Button1} onClick={this.props.onSignup}>Get started - It's free</button>
+				<p className={classes.SmallP}> Have an account?
+				<Button btnType="Login" clicked={this.props.onLogIn}>Log in</Button></p>
 			</Auxiliary>
 		)
 		let chunk0Text = text;
@@ -59,6 +64,11 @@ class Home extends Component {
 
 		return (
 			<Layout transparent={this.state.transparent}>
+                <Auth
+                    modalVisible={this.props.modalVisible}
+                    closeModal={this.props.onCloseModal}
+                    isSignup={this.props.isSignup}
+                    nightMode={this.props.nightMode} />
 				<div className={classes.Home}>
 					{/* Chunk0 */}
 					<section className={classes.Chunk0}>
@@ -161,4 +171,19 @@ class Home extends Component {
 	}
 }
 
-export default Home;
+const mapStateToProps = state => {
+	return {
+		nightMode: state.nightMode.nightMode,
+		modalVisible: state.auth.modalVisible,
+		isSignup: state.auth.isSignup
+	}
+}
+const mapDispatchToProps = dispatch => {
+	return {
+		onSignup: () => dispatch(actionCreators.signupOn()),
+		onLogIn: () => dispatch(actionCreators.loginOn()),
+		onCloseModal: () => dispatch(actionCreators.modalOff())
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

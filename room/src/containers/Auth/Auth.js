@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import classes from './Auth.css';
 import Modal from '../../UI/Modal/Modal';
 import Spinner from '../../UI/Spinner/Spinner';
 import Button from '../../UI/Button/Button';
 import Input from '../../UI/Input/Input';
 import { checkValidity } from '../../Shared/CheckValidity'
+import * as actionCreators from '../../store/actions/index';
+
 
 class Auth extends Component {
     state = {
@@ -55,7 +58,7 @@ class Auth extends Component {
 
     submitHandler = (event) => {
         event.preventDefault();
-        this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value, this.state.isSignUp);
+        this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value, this.props.isSignup);
     }
 
 
@@ -116,4 +119,18 @@ class Auth extends Component {
     }
 }
 
-export default Auth;
+const mapStateToProps = state => {
+    return {
+        loading: state.auth.loading,
+        error: state.auth.error,
+        isAuthenticated: state.auth.token !== null,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onAuth: (email, password, isSignUp) => dispatch(actionCreators.auth(email, password, isSignUp))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);
