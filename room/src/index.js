@@ -10,12 +10,14 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 import storage from 'redux-persist/lib/storage'
 import './index.css';
 import App from './App';
-import room from './store/reducers/room';
 import Spinner from './UI/Spinner/Spinner';
+import nightMode from './store/reducers/nightMode';
+import auth from './store/reducers/auth';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer = combineReducers({
-    room: room
+    nightMode: nightMode,
+    auth: auth,
 })
 const persistConfig = {
     key: 'root',
