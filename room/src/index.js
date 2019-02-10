@@ -13,15 +13,18 @@ import App from './App';
 import Spinner from './UI/Spinner/Spinner';
 import nightMode from './store/reducers/nightMode';
 import auth from './store/reducers/auth';
+import room from './store/reducers/room';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer = combineReducers({
     nightMode: nightMode,
     auth: auth,
+    room: room
 })
 const persistConfig = {
     key: 'root',
     storage,
+    blacklist: ['room']
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
