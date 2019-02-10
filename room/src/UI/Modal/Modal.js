@@ -13,7 +13,9 @@ const Modal = (props) => {
                 style={{
                     transform: props.visible ? 'translateY(0)' : 'translateY(-100vh)',
                     opacity: props.visible ? '1' : '0',
-                    backgroundColor: props.nightMode ? '#111319' : 'white'
+                    backgroundColor: props.nightMode ? '#111319' : 'white',
+                    width: props.width,
+                    left: props.left
                 }}
             >
                 <div onClick={props.closeModal}>
