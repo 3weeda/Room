@@ -1,10 +1,19 @@
 import React from 'react';
 import classes from './Clock.css'
+import Modal from '../../../../UI/Modal/Modal';
+import Alarm from './Alarm/Alarm';
+import Stopwatch from './Stopwatch/Stopwatch';
+import Timer from './Timer/Timer';
 
 class Clock extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { time: new Date() };
+        this.state = {
+            time: new Date(),
+            alarm: true,
+            stopwatch: false,
+            timer: false
+        };
         this.radius = this.props.size / 2;
         this.drawingContext = null;
         this.draw24hour = this.props.timeFormat.toLowerCase().trim() === "24hour";
@@ -127,15 +136,57 @@ class Clock extends React.Component {
         ctx.rotate(-position);
     }
 
+    showAlarmHandler = () => {
+        this.setState({ alarm: true, stopwatch: false, timer: false })
+    }
+    showStopwatchHandler = () => {
+        this.setState({ alarm: false, stopwatch: true, timer: false })
+    }
+    showTimerHandler = () => {
+        this.setState({ alarm: false, stopwatch: false, timer: true })
+    }
+
+
     render() {
         return (
-            <div className={classes.box} title="Clock">
+            <div className={classes.box}  >
                 <canvas
+                    title="Clock"
+                    onClick={this.props.zoomIn}
                     width={this.props.size}
                     height={this.props.size}
                     style={{ width: String(this.props.size / 2) + 'px' }}
                     className={classes.Clock} ref="clockCanvas"
                     id="CCC" />
+                <Modal
+                    visible={this.props.elementZoomed}
+                    closeModal={this.props.zoomOut}
+                    nightMode="true"
+                    width="50%"
+                    left="calc(50% - 350px)"
+                >
+                    <div
+                        className={classes.ClockApps}
+                        style={{ color: 'white' }} >
+                        <ul>
+                            <li
+                                onClick={this.showAlarmHandler}
+                                style={{ backgroundColor: this.state.alarm ? '#444b61' : '#111319' }}
+                            >Alarm</li>
+                            <li onClick={this.showStopwatchHandler}
+                                style={{ backgroundColor: this.state.stopwatch ? '#444b61' : '#111319' }}
+                            >Stopwatch</li>
+                            <li onClick={this.showTimerHandler}
+                                style={{ backgroundColor: this.state.timer ? '#444b61' : '#111319' }}
+                            >Timer</li>
+                        </ul>
+                        <div className={classes.Apps}>
+                            <Alarm visible={this.state.alarm} />
+                            <Stopwatch visible={this.state.stopwatch} />
+                            <Timer visible={this.state.timer} />
+                        </div>
+                    </div>
+                </Modal>
             </div>
         );
     }

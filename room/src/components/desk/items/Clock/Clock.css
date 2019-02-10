@@ -1,8 +1,39 @@
 .box {
     position: relative;
     bottom: 1290px;
+    overflow: hidden;
     right: 60px;
-    z-index: 1;
+    z-index: 3;
     width: 120px;
     margin: auto;
 }
+.Clock {
+    cursor: pointer;
+}
+.ClockApps {
+    display: block;
+    box-sizing: border-box;
+}
+.ClockApps ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+}
+.ClockApps li {
+    display: list-item;
+    width: 30%;
+    text-align: center;
+    padding: 1rem 2rem 1rem 2rem;
+    cursor: pointer;
+    border-right: 1px solid #111319;
+    border-bottom: none !important;
+}
+.Apps {
+    padding: 20px;
+    background-color: #444b61;
+}
+/* .ClockApps li:last-child {
+    border-right: none;
+} */
