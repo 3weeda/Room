@@ -31,8 +31,6 @@ const reducer = (state = initialState, action) => {
             return updateObject(state, { modalVisible: true, isSignup: false })
         case actionTypes.MODAL_OFF:
             return updateObject(state, { modalVisible: false })
-        case actionTypes.MODAL_ON:
-            return updateObject(state, { modalVisible: true })
         default:
             return state;
     }

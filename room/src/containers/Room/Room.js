@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actionCreators from '../../store/actions/index';
 import Desk from '../../components/desk/items/Desk/Desk';
 import classes from './Room.css';
 import Computer from '../../components/desk/items/Computer/Computer';
@@ -48,15 +50,42 @@ class Room extends Component {
                         <VerticalBooks />
                         <Kandle />
                         <Vase />
-                        <Clock size={240} hourFormat="roman" timeFormat="standard" />
+                        <Clock
+                            size={240}
+                            hourFormat="roman"
+                            timeFormat="standard"
+                            nightMode={this.props.nightMode}
+                            zoomIn={this.props.onZoomIn}
+                            zoomOut={this.props.onZoomOut}
+                            elementZoomed={this.props.elementZoomed} />
                         <Windo />
                         <Lamp lightSwitch={this.lightSwitchHandler} />
                         <LampLight light={this.state.light} />
                     </div>
+                    {/* <div className={classes.d}>
+                        <p>sddsddddddddddddd</p>
+                        <p>sddsddddddddddddd</p>
+                        <p>sddsddddddddddddd</p>
+                        <p>sddsddddddddddddd</p>
+                    </div> */}
                 </div>
             </Layout>
         );
     }
 }
 
-export default Room;
+const mapStateToProps = state => {
+    return {
+        nightMode: state.nightMode.nightMode,
+        elementZoomed: state.room.elementZoomed
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onZoomIn: () => dispatch(actionCreators.zoomIn()),
+        onZoomOut: () => dispatch(actionCreators.zoomOut()),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Room);

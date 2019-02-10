@@ -8,6 +8,10 @@ export {
     authCheckState,
     signupOn,
     loginOn,
-    modalOn,
     modalOff
 } from './auth'
+
+export {
+    zoomIn,
+    zoomOut
+} from './room'

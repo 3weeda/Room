@@ -7,5 +7,6 @@ export const AUTH_LOGOUT = 'AUTH_LOGOUT';
 export const SIGNUP_ON = 'SIGNUP_ON';
 export const LOGIN_ON = 'LOGIN_ON';
 export const MODAL_OFF = 'MODAL_OFF';
-export const MODAL_ON = 'MODAL_ON';
 
+export const ZOOM_IN = 'ZOOM_IN';
+export const ZOOM_OUT = 'ZOOM_OUT';

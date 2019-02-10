@@ -100,8 +100,3 @@ export const modalOff = () => {
         type: actionTypes.MODAL_OFF
     }
 }
-export const modalOn = () => {
-    return {
-        type: actionTypes.MODAL_ON
-    }
-}
