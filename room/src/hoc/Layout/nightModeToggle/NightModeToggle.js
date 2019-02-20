@@ -4,7 +4,7 @@ import classes from './NightModeToggle.css';
 const NightModeToggle = (props) => {
     return (
         <div className={classes.toggleWrapper} title="Night Mode">
-            <input type="checkbox" className={classes.dn} id="dn" onClick={props.clicked} checked={props.nightMode} />
+            <input type="checkbox" className={classes.dn} id="dn" onChange={props.clicked}  checked={props.nightMode} />
             <label htmlFor="dn" className={classes.toggle}>
                 <span className={classes.toggle__handler}>
                     <span className={[classes.crater, classes.crater1].join(' ')}></span>
