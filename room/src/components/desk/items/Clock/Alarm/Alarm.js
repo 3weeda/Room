@@ -34,7 +34,10 @@ export default class AlarmClock extends React.Component {
 
     setAlarmTime(event) {
         event.preventDefault();
-        const inputAlarmTimeModified = event.target.value + ':00'
+        let inputAlarmTimeModified = event.target.value + ':00'
+        if (inputAlarmTimeModified > 12) {
+            inputAlarmTimeModified = inputAlarmTimeModified - 12;
+        }
         this.setState({
             alarmTime: inputAlarmTimeModified
         })
@@ -42,9 +45,9 @@ export default class AlarmClock extends React.Component {
 
     checkAlarmClock() {
         if (this.state.alarmTime === 'undefined' || !this.state.alarmTime) {
-            this.alarmMessage = "Please set your alarm.";
+            this.alarmMessage = "Set Alarm:";
         } else {
-            this.alarmMessage = "Your alarm is set for " + this.state.alarmTime + ".";
+            this.alarmMessage = "Alarm is set for: " + this.state.alarmTime;
             if (this.state.currentTime === this.state.alarmTime) {
                 alert("its time!");
             } else {
@@ -61,7 +64,7 @@ export default class AlarmClock extends React.Component {
                 <h2>{this.alarmMessage}
                 </h2>
                 <form>
-                    <input type="time" onChange={this.setAlarmTime}></input>
+                    <input className={classes.Input} type="time" onChange={this.setAlarmTime}></input>
                 </form>
             </div>
         );
