@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Alarm.css';
 
-export default class AlarmClock extends React.Component {
+class Alarm extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -49,6 +49,10 @@ export default class AlarmClock extends React.Component {
         } else {
             this.alarmMessage = "Alarm is set for: " + this.state.alarmTime;
             if (this.state.currentTime === this.state.alarmTime) {
+                this.setState({
+                    alarmTime: ''
+                })
+                this.refs.alarm.value = '';
                 alert("its time!");
             } else {
                 console.log("not yet");
@@ -59,14 +63,13 @@ export default class AlarmClock extends React.Component {
     render() {
         return (
             <div className={this.props.visible ? classes.Alarm : classes.hide}>
-                <h2>It is {this.state.currentTime}.
-          </h2>
-                <h2>{this.alarmMessage}
-                </h2>
+                <h2>Now it is {this.state.currentTime}</h2>
+                <h2>{this.alarmMessage}</h2>
                 <form>
-                    <input className={classes.Input} type="time" onChange={this.setAlarmTime}></input>
+                    <input className={classes.Input} ref="alarm" type="time" onChange={this.setAlarmTime}></input>
                 </form>
             </div>
         );
     }
 }
+export default Alarm;
