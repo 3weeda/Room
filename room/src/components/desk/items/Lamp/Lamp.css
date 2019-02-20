@@ -1,11 +1,16 @@
 .box {
     position: relative;
     bottom: 1835px;
-    left: 60px;
+    right: 390px;
     width: 120px;
     margin: auto;
     z-index: 2;
 }
 .Lamp {
     cursor: pointer;
+}
+@media(max-width: 1100px){
+    .box {
+        display: none;
+    }
 }
