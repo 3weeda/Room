@@ -1,6 +1,88 @@
 .Timer {
     display: block;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
 }
 .hide {
     display: none;
+}
+.Time form {
+    width: 100%;
+}
+.Timer h1 {
+    font-size: 60px;
+    font-weight: 100;
+    line-height: 120px;
+    margin: auto;
+    margin-top: 10px;
+    background-color: #111319;
+  }
+.displayedTime {
+  margin-bottom: 10px;
+}
+.Containers {
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+}
+.Container {
+    height: 40px;
+    width: 30%;
+    margin: 0 5px 10px 0;
+    background-color: #111319;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+}
+.Container:last-child {
+    margin-right: 0;
+}
+.Container::placeholder {
+    font-size: 15px;
+    text-align: center;
+}
+.Btn {
+    font-size: 20px; 
+    display: inline-block; 
+    width: 72px;
+    height: 72px;
+    margin: 5px;
+    margin-bottom: 0;
+    padding: 0;
+    cursor: pointer;
+    letter-spacing: 1px; 
+    border: 0;
+    border-radius: 50%;
+    outline: none;
+    background: white;
+}
+.Btn:hover {
+box-shadow: 0px 0px 20px #111319;
+}
+.Btn:active {
+box-shadow: none;
+}
+
+.startBtn {
+    color: #4bd761;
+}
+.stopBtn  {
+    color: #fd3d2a;
+}
+
+@media (min-width:640px) {
+  
+  .Timer {
+    width: 50%;
+  }
+}
+
+@media (min-width:900px) {
+  
+  .Timer h1 {
+    font-size: 60px;
+  }
 }
