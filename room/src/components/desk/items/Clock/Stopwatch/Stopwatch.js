@@ -1,41 +1,95 @@
-import React, { Component } from 'react';
+import React from 'react';
+import classes from './Stopwatch.css'
 
-class Stopwatch extends Component {
-    state = {
-        status: false,
-        runningTime: 0
-    };
-    handleClick = () => {
-        this.setState(state => {
-            if (state.status) {
-                clearInterval(this.timer);
-            } else {
-                const startTime = Date.now() - this.state.runningTime;
-                this.timer = setInterval(() => {
-                    this.setState({ runningTime: Date.now() - startTime });
-                });
-            }
-            return { status: !state.status };
-        });
-    };
-    handleReset = () => {
-        clearInterval(this.timer);
-        this.setState({ runningTime: 0, status: false });
+
+const formattedSeconds = (sec) =>
+    Math.floor(sec / 60) +
+    ':' +
+    ('0' + sec % 60).slice(-2)
+
+
+class Stopwatch extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            secondsElapsed: 0,
+            laps: [],
+            lastClearedIncrementer: null
+        };
+        this.incrementer = null;
     }
 
-    componentWillUnmount() {
-        clearInterval(this.timer);
+    handleStartClick() {
+        this.incrementer = setInterval(() =>
+            this.setState({
+                secondsElapsed: this.state.secondsElapsed + 1
+            })
+            , 1000);
+    }
+
+    handleStopClick() {
+        clearInterval(this.incrementer);
+        this.setState({
+            lastClearedIncrementer: this.incrementer
+        });
+    }
+
+    handleResetClick() {
+        clearInterval(this.incrementer);
+        this.setState({
+            secondsElapsed: 0,
+            laps: []
+        });
+    }
+
+    handleLabClick() {
+        this.setState({
+            laps: this.state.laps.concat([this.state.secondsElapsed])
+        })
     }
 
     render() {
-        const { status, runningTime } = this.state;
         return (
-            <div>
-                <p>{runningTime}ms</p>
-                <button onClick={this.handleClick}>{status ? 'Stop' : 'Start'}</button>
-                <button onClick={this.handleReset}>Reset</button>
+            <div className={this.props.visible ? classes.Stopwatch : classes.hide}>
+                <h1 className={classes.stopwatchTimer}>{formattedSeconds(this.state.secondsElapsed)}</h1>
+
+                {(this.state.secondsElapsed === 0 ||
+                    this.incrementer === this.state.lastClearedIncrementer
+                    ? <Button
+                        className={[classes.Btn, classes.startBtn].join(' ')}
+                        onClick={this.handleStartClick.bind(this)}>start</Button>
+                    : <Button
+                        className={[classes.Btn, classes.stopBtn].join(' ')}
+                        onClick={this.handleStopClick.bind(this)}>stop</Button>
+                )}
+                {(this.state.secondsElapsed !== 0 &&
+                    this.incrementer !== this.state.lastClearedIncrementer
+                    ? <Button
+                        className={classes.Btn}
+                        onClick={this.handleLabClick.bind(this)}>lab</Button>
+                    : null
+                )}
+
+
+                {(this.state.secondsElapsed !== 0 &&
+                    this.incrementer === this.state.lastClearedIncrementer
+                    ? <Button
+                        className={classes.Btn}
+                        onClick={this.handleResetClick.bind(this)}>reset</Button>
+                    : null
+                )}
+
+                <ul className={classes.stopwatchLaps}>
+                    {this.state.laps.map((lap, i) =>
+                        <li className={classes.stopwatchLap}><strong>{i + 1}:</strong> {formattedSeconds(lap)}</li>)
+                    }
+                </ul>
             </div>
         );
     }
 }
+
+const Button = (props) =>
+    <button type="button" {...props} className={props.className} />;
+
 export default Stopwatch;
