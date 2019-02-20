@@ -21,7 +21,7 @@
     padding: 0;
     margin: 0;
 }
-.ClockApps li {
+.app {
     display: list-item;
     width: 30%;
     text-align: center;
@@ -33,6 +33,7 @@
 .Apps {
     padding: 20px;
     background-color: #444b61;
+    padding-bottom: 40px;
 }
 /* .ClockApps li:last-child {
     border-right: none;

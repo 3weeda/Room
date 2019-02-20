@@ -49,7 +49,6 @@
     font-weight: 400;
     padding-bottom: 5px;
     padding-top: 5px;
-    margin-left: 15px;
     margin-bottom: 10px;
 }
 .SquareNightMode:hover {
@@ -65,6 +64,7 @@
     padding-bottom: 10px;
     font-weight: 500;
     box-sizing: border-box;
+    margin-right: 15px;
 }
 .Login:hover {
     color: #111319;
@@ -74,6 +74,7 @@
     font-weight: 500;
     color: white;
     padding-bottom: 10px;
+    margin-right: 15px;
 }
 .LoginNightMode:hover {
     color: #31878d;

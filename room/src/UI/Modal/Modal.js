@@ -11,14 +11,14 @@ const Modal = (props) => {
             <div
                 className={classes.Modal}
                 style={{
-                    transform: props.visible ? 'translateY(0)' : 'translateY(-100vh)',
+                    transform: props.visible ? 'translateY(0)' : 'translateY(-150vh)',
                     opacity: props.visible ? '1' : '0',
                     backgroundColor: props.nightMode ? '#111319' : 'white',
                     width: props.width,
                     left: props.left
                 }}
             >
-                <div onClick={props.closeModal}>
+                <div className={classes.CloseDiv} onClick={props.closeModal}>
                     <ReactSVG
                         src={svg}
                         svgStyle={{ width: 15, fill: props.nightMode ? 'white' : '#111319' }}

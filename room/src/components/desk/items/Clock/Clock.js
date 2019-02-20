@@ -169,21 +169,24 @@ class Clock extends React.Component {
                         className={classes.ClockApps}
                         style={{ color: 'white' }} >
                         <ul>
-                            <li
+                            <li className={classes.app}
                                 onClick={this.showAlarmHandler}
                                 style={{ backgroundColor: this.state.alarm ? '#444b61' : '#111319' }}
                             >Alarm</li>
-                            <li onClick={this.showStopwatchHandler}
+                            <li className={classes.app}
+                                onClick={this.showStopwatchHandler}
                                 style={{ backgroundColor: this.state.stopwatch ? '#444b61' : '#111319' }}
                             >Stopwatch</li>
-                            <li onClick={this.showTimerHandler}
+                            <li className={classes.app}
+                                onClick={this.showTimerHandler}
                                 style={{ backgroundColor: this.state.timer ? '#444b61' : '#111319' }}
                             >Timer</li>
                         </ul>
                         <div className={classes.Apps}>
                             <Alarm visible={this.state.alarm} />
                             <Stopwatch visible={this.state.stopwatch} />
-                            <Timer visible={this.state.timer} />
+                            <Timer
+                                visible={this.state.timer} />
                         </div>
                     </div>
                 </Modal>
