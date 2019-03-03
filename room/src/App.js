@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { StyleRoot } from 'radium';
 import Room from './containers/Room/Room';
 import Home from './containers/Home/Home';
 import About from './components/About/About';
@@ -12,17 +13,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Switch>
-          <Route path="/tour" component={HowItWorks} />
-          {this.props.isAuthenticated ? <Route path="/room" component={Room}/> : null }
-          <Route path="/about" component={About} />
-          <Route path="/plans" component={Plans} />
-          <Route path="/" exact component={Home} />
-          <Redirect to="/" />
-        </Switch>
-
-      </div>
+      <StyleRoot>
+        <div className="App">
+          <Switch>
+            <Route path="/tour" component={HowItWorks} />
+            {this.props.isAuthenticated ? <Route path="/room" component={Room} /> : null}
+            <Route path="/about" component={About} />
+            <Route path="/plans" component={Plans} />
+            <Route path="/" exact component={Home} />
+            <Redirect to="/" />
+          </Switch>
+        </div>
+      </StyleRoot>
     );
   }
 }
