@@ -38,27 +38,63 @@ class Room extends Component {
                 <div className={classes.Container}>
                     <div className={classes.Room}>
                         <Desk />
-                        <Computer />
-                        <Cactus />
+                        <Computer
+                            nightMode={this.props.nightMode}
+                            zoomIn={this.props.onComputerZoomIn}
+                            zoomOut={this.props.onZoomOut}
+                            elementZoomed={this.props.computer} />
+                        <Cactus
+                            nightMode={this.props.nightMode}
+                            zoomIn={this.props.onCactusZoomIn}
+                            zoomOut={this.props.onZoomOut}
+                            elementZoomed={this.props.cactus} />
                         <Floor />
                         <FloorShadow />
-                        <Speaker />
-                        <HorizontalBooks />
-                        <Plant />
+                        <Speaker
+                            nightMode={this.props.nightMode}
+                            zoomIn={this.props.onSpeakerZoomIn}
+                            zoomOut={this.props.onZoomOut}
+                            elementZoomed={this.props.speaker} />
+                        <HorizontalBooks
+                            nightMode={this.props.nightMode}
+                            zoomIn={this.props.onShelfBooksZoomIn}
+                            zoomOut={this.props.onZoomOut}
+                            elementZoomed={this.props.shelfBooks} />
+                        <Plant
+                            nightMode={this.props.nightMode}
+                            zoomIn={this.props.onPlantZoomIn}
+                            zoomOut={this.props.onZoomOut}
+                            elementZoomed={this.props.plant} />
                         <Chair />
                         <Shelf />
-                        <VerticalBooks />
-                        <Kandle />
-                        <Vase />
+                        <VerticalBooks
+                            nightMode={this.props.nightMode}
+                            zoomIn={this.props.onDeskBooksZoomIn}
+                            zoomOut={this.props.onZoomOut}
+                            elementZoomed={this.props.deskBooks} />
+                        <Kandle
+                            nightMode={this.props.nightMode}
+                            zoomIn={this.props.onKandleZoomIn}
+                            zoomOut={this.props.onZoomOut}
+                            elementZoomed={this.props.kandle} />
+                        <Vase
+                            nightMode={this.props.nightMode}
+                            zoomIn={this.props.onVaseZoomIn}
+                            zoomOut={this.props.onZoomOut}
+                            elementZoomed={this.props.vase} />
                         <Clock
                             size={240}
                             hourFormat="roman"
                             timeFormat="standard"
                             nightMode={this.props.nightMode}
-                            zoomIn={this.props.onZoomIn}
+                            zoomIn={this.props.onClockZoomIn}
                             zoomOut={this.props.onZoomOut}
-                            elementZoomed={this.props.elementZoomed} />
-                        <Windo />
+                            elementZoomed={this.props.clock} />
+                        <Windo
+                            nightMode={this.props.nightMode}
+                            zoomIn={this.props.onWindowZoomIn}
+                            zoomOut={this.props.onZoomOut}
+                            elementZoomed={this.props.window} />
                         <Lamp lightSwitch={this.lightSwitchHandler} />
                         <LampLight light={this.state.light} />
                     </div>
@@ -77,13 +113,31 @@ class Room extends Component {
 const mapStateToProps = state => {
     return {
         nightMode: state.nightMode.nightMode,
-        elementZoomed: state.room.elementZoomed
+        clock: state.room.clock,
+        computer: state.room.computer,
+        vase: state.room.vase,
+        kandle: state.room.kandle,
+        shelfBooks: state.room.shelfBooks,
+        cactus: state.room.cactus,
+        speaker: state.room.speaker,
+        deskBooks: state.room.deskBooks,
+        plant: state.room.plant,
+        window: state.room.window
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onZoomIn: () => dispatch(actionCreators.zoomIn()),
+        onClockZoomIn: () => dispatch(actionCreators.clockZoomIn()),
+        onComputerZoomIn: () => dispatch(actionCreators.computerZoomIn()),
+        onVaseZoomIn: () => dispatch(actionCreators.vaseZoomIn()),
+        onKandleZoomIn: () => dispatch(actionCreators.kandleZoomIn()),
+        onShelfBooksZoomIn: () => dispatch(actionCreators.shelfBooksZoomIn()),
+        onCactusZoomIn: () => dispatch(actionCreators.cactusZoomIn()),
+        onSpeakerZoomIn: () => dispatch(actionCreators.speakerZoomIn()),
+        onDeskBooksZoomIn: () => dispatch(actionCreators.deskBooksZoomIn()),
+        onPlantZoomIn: () => dispatch(actionCreators.plantZoomIn()),
+        onWindowZoomIn: () => dispatch(actionCreators.windowZoomIn()),
         onZoomOut: () => dispatch(actionCreators.zoomOut()),
     }
 }
