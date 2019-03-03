@@ -4,6 +4,7 @@ import Backdrop from '../Backdrop/Backdrop';
 import Auxiliary from '../../hoc/Auxiliary/Auxiliary';
 import ReactSVG from 'react-svg';
 import svg from '../../assets/svg/23-xMark.svg'
+import Radium from 'radium'
 const Modal = (props) => {
     return (
         <Auxiliary>
@@ -14,8 +15,10 @@ const Modal = (props) => {
                     transform: props.visible ? 'translateY(0)' : 'translateY(-150vh)',
                     opacity: props.visible ? '1' : '0',
                     backgroundColor: props.nightMode ? '#111319' : 'white',
-                    width: props.width,
-                    left: props.left
+                    '@media (min-width: 600px)': {
+                        width: props.width,
+                        left: props.left
+                    }
                 }}
             >
                 <div className={classes.CloseDiv} onClick={props.closeModal}>
@@ -32,4 +35,4 @@ const Modal = (props) => {
     );
 };
 
-export default Modal;
+export default Radium(Modal);

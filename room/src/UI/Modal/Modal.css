@@ -6,7 +6,7 @@
     box-shadow: 1px 1px 1px black;
     padding: 0;
     left: 15%;
-    top: 30%;
+    top: 25%;
     box-sizing: border-box;
     transition: all 0.3s ease-out;
 }
@@ -23,8 +23,12 @@
 }
 
 @media (min-width: 600px) {
-    .Modal, .ModalNightMode {
-        width: 400px;
-        left: calc(50% - 200px);
+    .Modal {
+        width: 450px;
+        left: calc(50% - 225px);
+    }
+    .Wide {
+        width: 600px !important;
+        left: calc(50% - 300px) !important;
     }
 }
