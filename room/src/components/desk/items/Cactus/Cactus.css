@@ -4,4 +4,5 @@
     right: 155px;
     width: 45px;
     margin: auto;
+    z-index: 3;
 }
