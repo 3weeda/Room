@@ -161,9 +161,9 @@ class Clock extends React.Component {
                 <Modal
                     visible={this.props.elementZoomed}
                     closeModal={this.props.zoomOut}
-                    nightMode="true"
-                    width="50%"
-                    left="calc(50% - 350px)"
+                    nightMode={this.props.nightMode}
+                    width="600px"
+                    left="calc(50% - 300px)"
                 >
                     <div
                         className={classes.ClockApps}

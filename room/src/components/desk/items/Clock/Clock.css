@@ -10,6 +10,9 @@
 .Clock {
     cursor: pointer;
 }
+.Clock:hover {
+    filter: brightness(80%);
+}
 .ClockApps {
     display: block;
     box-sizing: border-box;
