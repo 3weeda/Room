@@ -1,18 +1,19 @@
 .Room {
-    height: 85vh;
-    position: relative;
-    top: 30px;
-    text-align: center;
+  height: 85vh;
+  position: relative;
+  top: 30px;
+  text-align: center;
 }
 .Container {
-    width: 100%;
-    position: absolute;
-    top: 56px;
-    height: 91vh;
-    background-image: url(../../assets/svg/22-bgTexture.svg), linear-gradient(331deg, rgba(17,19,25,1) 48%, rgba(108,99,153,1) 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+  width: 100%;
+  position: absolute;
+  top: 56px;
+  height: 91vh;
+  background-image: url(../../assets/svg/22-bgTexture.svg),
+    linear-gradient(331deg, rgba(17, 19, 25, 1) 48%, rgba(108, 99, 153, 1) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 /* .d {
     position: relative;
