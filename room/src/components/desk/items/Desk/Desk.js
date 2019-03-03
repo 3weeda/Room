@@ -7,7 +7,6 @@ const Desk = () => (
     <div className={classes.Desk}>
         <ReactSVG
             src={svg}
-            // svgStyle={{ width: "35%" }}
             svgStyle={{ width: "400" }} />
     </div>
 );
