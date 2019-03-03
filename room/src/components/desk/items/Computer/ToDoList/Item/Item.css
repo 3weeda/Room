@@ -1,0 +1,12 @@
+.Done {
+  color: red;
+  text-decoration: line-through;
+}
+
+.Undone {
+  color: #61dafb;
+}
+
+.Icon {
+  margin: 6px 10px 6px 0;
+}

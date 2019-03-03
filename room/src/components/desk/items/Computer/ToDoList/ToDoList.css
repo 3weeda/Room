@@ -1,0 +1,29 @@
+.TodoList {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  transition: transform 0.3s ease-out;
+}
+.hide {
+  display: none;
+}
+.BackButton {
+  display: block;
+  margin: 0 10px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  outline: none;
+}
+.TodoList h1 {
+  color: white;
+}
+.TodoList ul {
+  list-style: none;
+}
+
+.TodoList ul > li:hover {
+  background-color: #f5f5f5;
+}
