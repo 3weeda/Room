@@ -1,0 +1,129 @@
+.CalculatorApp {
+  width: 400px;
+  height: 480px;
+  position: relative;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  top: 10px;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.CalculatorApp button {
+  display: block;
+  background: none;
+  padding: 0;
+  font-family: inherit;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.CalculatorApp button:active {
+  box-shadow: inset 0px 0px 80px 0px rgba(0, 0, 0, 0.25);
+}
+
+.Calculator {
+  width: 100%;
+  /* edit this */
+  height: 480px;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  /* box-shadow: 0px 0px 20px 0px #aaa; */
+}
+
+.CalculatorDisplay {
+  color: white;
+  background: #1c191c;
+  line-height: 130px;
+  font-size: 5em;
+  flex: 1;
+}
+
+.AutoScalingText {
+  display: inline-block;
+}
+
+.CalculatorDisplay .AutoScalingText {
+  padding: 0 30px;
+  position: absolute;
+  right: 0;
+  transform-origin: right;
+}
+
+.KeyPad {
+  height: 350px;
+  display: flex;
+}
+
+.InputKeys {
+  width: 300px;
+}
+
+.FunctionKeys {
+  display: flex;
+}
+
+.DigitKeys {
+  background: #e0e0e7;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+}
+
+.CalculatorKey {
+  width: 100px;
+  height: 70px;
+  border-top: 1px solid black !important;
+  border-right: 1px solid black !important;
+  text-align: center;
+  line-height: 70px;
+}
+.Calculator .FunctionKeys .CalculatorKey {
+  font-size: 1.5em;
+}
+.KeyMultiply {
+  line-height: 40px;
+}
+.Calculator .DigitKeys .CalculatorKey {
+  font-size: 2em;
+}
+.Calculator .DigitKeys .KeyZero {
+  width: 200px;
+  text-align: left;
+  padding-left: 32px;
+}
+.Calculator .DigitKeys .KeyDot {
+  padding-top: 1em;
+  font-size: 0.75em;
+}
+.Calculator .OperatorKeys .CalculatorKey {
+  color: white;
+  border-right: 0;
+  font-size: 3em;
+}
+
+.FunctionKeys {
+  background: linear-gradient(
+    to bottom,
+    rgba(202, 202, 204, 1) 0%,
+    rgba(196, 194, 204, 1) 100%
+  );
+}
+.Calculator .OperatorKeys {
+  background: linear-gradient(
+    to bottom,
+    #636d8b 0%,
+    #444b61 100%
+  );
+  height: 350px;
+}
