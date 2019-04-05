@@ -15,6 +15,7 @@ const Modal = (props) => {
                     transform: props.visible ? 'translateY(0)' : 'translateY(-150vh)',
                     opacity: props.visible ? '1' : '0',
                     backgroundColor: props.nightMode ? '#111319' : 'white',
+                    top: props.top,
                     '@media (min-width: 600px)': {
                         width: props.width,
                         left: props.left
