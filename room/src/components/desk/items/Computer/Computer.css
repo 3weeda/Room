@@ -3,16 +3,27 @@
   bottom: 67px;
   right: 10px;
   width: 170px;
+  height: 139px;
   margin: auto;
-  z-index: 3;
+  z-index: 4;
   cursor: pointer;
   box-sizing: border-box;
+  filter: brightness(90%);
+  transition: transform 0.25s ease;
 }
 .Computer:hover {
-  filter: brightness(80%);
+  filter: brightness(100%);
 }
-
-.AppsList {
+.tag {
+  height: 55px !important;
+  position: relative;
+  bottom: 215px;
+}
+.tag h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+/* .AppsList {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -25,7 +36,7 @@
 .hide {
   display: none;
 }
-/* File icon */
+File icon
 .FileParent {
   width: 180px;
   height: 60px;
@@ -126,4 +137,4 @@
     #ccc 100%
   );
   height: 18px;
-}
+} */
