@@ -1,0 +1,8 @@
+.Plant {
+    position: relative;
+    bottom: 1442px;
+    right: 210px;
+    width: 135px;
+    margin: auto;
+    z-index: 2;
+}
