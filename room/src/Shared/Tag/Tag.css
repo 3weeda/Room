@@ -1,0 +1,30 @@
+.Tag {
+  background-color: #444b61;
+  color: white;
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  z-index: 50;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Tag h2 {
+  font-size: 12px;
+  font-weight: 400;
+  margin-right: 5px;
+  margin-left: 5px;
+  line-height: 17px;
+}
+.Triangle {
+  position: relative;
+  bottom: 2px;
+  width: 0;
+  height: 0;
+  border-right: 15px solid transparent;
+  /* border-left: 10px solid transparent; */
+  border-top: 20px solid #444b61;
+  z-index: -1;
+}
