@@ -18,21 +18,22 @@ class Item extends React.Component {
   render() {
     var todoClass = this.props.item.done ? classes.Done : classes.Undone;
     return (
-      <li className="list-group-item ">
-        <div
-          className={todoClass}
-          aria-hidden="true"
-          onClick={this.onClickDone}
-        >
-          {this.props.item.value}
-          <button
-            type="button"
-            className={classes.Icon}
-            onClick={this.onClickClose}
+      <li className={classes.ListItem}>
+        <div className={classes.todoName} onClick={this.onClickDone}>
+          <div
+            className={todoClass}
+            aria-hidden="true"
           >
-            &times;
-          </button>
+            {this.props.item.value}
+          </div>
         </div>
+        <button
+          type="button"
+          className={classes.Icon}
+          onClick={this.onClickClose}
+        >
+          &times;
+        </button>
       </li>
     );
   }

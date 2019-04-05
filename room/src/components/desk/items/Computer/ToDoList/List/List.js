@@ -1,5 +1,6 @@
 import React from "react";
 import Item from "../Item/Item";
+import classes from './List.css';
 
 class List extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class List extends React.Component {
         />
       );
     });
-    return <ul className="list-group"> {items} </ul>;
+    return <ul className={classes.ListGroup}> {items} </ul>;
   }
 }
 export default List;

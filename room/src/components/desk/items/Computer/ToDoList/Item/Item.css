@@ -1,12 +1,44 @@
 .Done {
-  color: red;
+  color: darkred;
   text-decoration: line-through;
 }
-
 .Undone {
   color: #61dafb;
 }
 
+.ListItem {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  vertical-align: middle;
+  margin: auto;
+  font-size: 18px;
+  text-align: left;
+  padding: 15px 5px 0 20px;
+  box-sizing: border-box;
+}
+.ListItem:hover {
+  background-color: #444b61;
+}
+.todoName {
+  width: 100%;
+  cursor: pointer;
+  height: 10px;
+}
 .Icon {
-  margin: 6px 10px 6px 0;
+  float: inline-end;
+  margin: 6px 10px 6px 10px;
+  vertical-align: middle;
+  position: relative;
+  bottom: 6px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.1s ease-out;
+}
+.Icon:hover {
+  transform: scale(1.5);
 }

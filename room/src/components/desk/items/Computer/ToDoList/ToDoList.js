@@ -2,11 +2,13 @@ import React from "react";
 import List from "./List/List";
 import Form from "./Form/Form";
 import classes from "./ToDoList.css";
+import axios from "../../../../../axios-orders";
 
-var todoItems = [];
-// todoItems.push({ index: 1, value: "learn react", done: false });
-// todoItems.push({ index: 2, value: "Go shopping", done: true });
-// todoItems.push({ index: 3, value: "buy flowers", done: true });
+let todoItems = [];
+let localTodoItems = JSON.parse(localStorage.getItem("localTodoItems"));
+if (localTodoItems) {
+  todoItems = localTodoItems;
+}
 
 class ToDoList extends React.Component {
   constructor(props) {
@@ -17,28 +19,66 @@ class ToDoList extends React.Component {
     this.state = { todoItems: todoItems };
   }
   addItem(todoItem) {
-    todoItems.unshift({
+    let newTodo = {
       index: todoItems.length + 1,
       value: todoItem.newItemValue,
-      done: false
-    });
+      done: false,
+      userId: this.props.userId
+    };
+    todoItems.unshift(newTodo);
     this.setState({ todoItems: todoItems });
+    this.handlePostTodo(newTodo);
   }
   removeItem(itemIndex) {
     todoItems.splice(itemIndex, 1);
     this.setState({ todoItems: todoItems });
+    //remove all then post remaining, TODO it properly
+    this.handleDeleteTodo(itemIndex);
+    todoItems.map(todo => {
+      return this.handlePostTodo(todo);
+    });
   }
   markTodoDone(itemIndex) {
-    var todo = todoItems[itemIndex];
+    let todo = todoItems[itemIndex];
     todoItems.splice(itemIndex, 1);
     todo.done = !todo.done;
     todo.done ? todoItems.push(todo) : todoItems.unshift(todo);
     this.setState({ todoItems: todoItems });
   }
+  handleDeleteTodo(itemIndex) {
+    axios
+      .delete("todo.json", { data: { index: itemIndex } })
+      .then(res => {
+        console.log(itemIndex);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+  handlePostTodo(todo) {
+    axios.post("/todo.json", { todo }).catch(error => {
+      console.log(error);
+    });
+  }
+
+  componentDidMount() {
+    let localTodoItems = JSON.parse(localStorage.getItem("localTodoItems"));
+    if (localTodoItems) {
+      this.setState({
+        todoItems: localTodoItems
+      });
+    }
+  }
+  componentDidUpdate() {
+    this.updateLocalStorage();
+  }
+  updateLocalStorage() {
+    let localTodoItems = JSON.stringify(this.state.todoItems);
+    localStorage.setItem("localTodoItems", localTodoItems);
+  }
   render() {
     return (
       <div className={this.props.visible ? classes.TodoList : classes.hide}>
-        <button className={classes.BackButton} onClick={this.props.backToList}>🡐</button>
         <h1>Todo list</h1>
         <List
           items={todoItems}
