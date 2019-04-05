@@ -1,20 +1,28 @@
 .Alarm {
-    display: block;
+    text-align: center;
+    margin-top: 20px;
 }
 .Alarm h2 {
-    font-weight: 400;
-    margin-top: 5px;
+  font-size: 35px;
+  font-weight: 400;
 }
-.Input {
-    width: 200px;
-    height: 100px;
-    background-color: #111319;
-    color: white;
-    font-weight: 100;
-    font-size: 35px;
-    padding: 5px 0px 5px 35px;
-    border: none;
+.Alarm .Input {
+  width: 300px;
+  height: 150px;
+  background-color: #111319;
+  color: white;
+  font-weight: 100;
+  font-size: 55px;
+  padding: 5px 10px 5px 45px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+}
+.Alarm .Input[type=time]::-webkit-inner-spin-button, 
+.Alarm .Input[type=time]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 .hide {
-    display: none;
+  display: none;
 }

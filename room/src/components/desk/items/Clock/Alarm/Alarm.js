@@ -63,7 +63,6 @@ class Alarm extends React.Component {
     render() {
         return (
             <div className={this.props.visible ? classes.Alarm : classes.hide}>
-                <h2>Now it is {this.state.currentTime}</h2>
                 <h2>{this.alarmMessage}</h2>
                 <form>
                     <input className={classes.Input} ref="alarm" type="time" onChange={this.setAlarmTime}></input>
