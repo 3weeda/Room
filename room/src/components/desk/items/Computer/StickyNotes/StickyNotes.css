@@ -1,0 +1,73 @@
+.StickyNotes {
+  font-family: "Shadows Into Light", cursive;
+  width: 5%;
+  height: 10px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eab92d', endColorstr='#c79810', GradientType=1);
+  position: absolute;
+  left: 90%;
+  bottom: 500px;
+  z-index: 2;
+}
+.Note {
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+  margin: 2px 0;
+  position: absolute;
+  cursor: -webkit-grab;
+  -webkit-box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.Note:active {
+  cursor: -webkit-grabbing;
+}
+
+.Note p {
+  font-size: 22px;
+  padding: 5px;
+  position: relative;
+  bottom: 10px;
+  font-family: "Shadows Into Light", "Tangerine", Arial;
+}
+
+.Note:hover > span {
+  opacity: 1;
+}
+
+.Note > span {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  opacity: 0;
+  transition: opacity 0.25s linear;
+}
+
+.Note button {
+  margin: 2px;
+}
+
+.Note > textarea {
+  height: 75%;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.Glyphicon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #444b61;
+  border: none;
+  color: white;
+  font-size: 30px;
+  line-height: 15px;
+  border-radius: 50%;
+  filter: brightness(80%);
+  outline: none;
+}
+.Glyphicon:hover {
+  filter: brightness(100%);
+  cursor: pointer;
+  transform: scale(1.1);
+}
