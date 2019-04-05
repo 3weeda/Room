@@ -4,4 +4,10 @@
     right: 240px;
     width: 60px;
     margin: auto;
+    cursor: pointer;
+    filter: brightness(90%);
+    overflow: auto;
+}
+.VerticalBooks:hover {
+    filter: brightness(100%)
 }
