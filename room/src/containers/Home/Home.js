@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Bg from '../../assets/images/freddie-pngcompressedfinal.png';
+import Bg from '../../assets/svg/0-WholeSet.svg';
 import classes from './Home.css';
 import Layout from '../../hoc/Layout/Layout';
 import Auxiliary from '../../hoc/Auxiliary/Auxiliary';
@@ -55,7 +55,7 @@ class Home extends Component {
 		let chunk0Text = text;
 		if (this.state.NarrowViewPort) {
 			chunk0Text = (
-				<section style={{ backgroundColor: "#fff2f2", height: "180px" }}>
+				<section style={{ height: "180px" }}>
 					<div className={classes.NarrowViewPortText}>
 						{text}
 					</div>
@@ -74,7 +74,7 @@ class Home extends Component {
 					{/* Chunk0 */}
 					<section className={classes.Chunk0}>
 						<div>
-							<img className={classes.Image} src={Bg} alt="" />
+							<img className={classes.Image} src={Bg} alt="Room elements" />
 							<div className={classes.Chunk0Text}>
 								<h2>All you need, <span>All in one place...</span></h2>
 								{!this.state.NarrowViewPort ? chunk0Text : null}

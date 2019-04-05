@@ -1,444 +1,463 @@
 a {
-    text-decoration: none;
-    box-sizing: border-box;
-    color: inherit;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: inherit;
 }
 .Home {
-    position: absolute;
-    top: 0;
+  position: absolute;
+  top: 0;
 }
 .Image {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 40%;
+  float: right;
+  height: auto;
+  display: block;
+  position: relative;
+  top: 80px;
+  right: 140px;
+}
+.Chunk0 {
+  height: 640px;
+  background-image: url(../../assets/svg/22-bgTexture.svg),
+    linear-gradient(331deg, rgba(17, 19, 25, 1) 48%, rgba(108, 99, 153, 1) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position: 100% top;
 }
 .Chunk0Text {
-    position: absolute;
-    top: 4%;
-    margin-left: 14%;
-    width: 40%;
-    z-index: 1;
-    color: #111319;
-    text-transform: capitalize;
-    display: flex;
-    flex-flow: column;
+  position: absolute;
+  top: 4%;
+  margin-left: 14%;
+  width: 40%;
+  z-index: 1;
+  color: white;
+  text-transform: capitalize;
+  display: flex;
+  flex-flow: column;
 }
 .Chunk0Text h2 {
-    font-size: 45px;
-    font-weight: 300;
-    line-height: 55px;
-    margin-bottom: 5px;
+  font-size: 45px;
+  font-weight: 300;
+  line-height: 55px;
+  margin-bottom: 5px;
 }
 .Chunk0Text h2 span {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 .P {
-    text-transform: none;
-    color: #535353;
-    font-weight: 500;
-    line-height: 25px;
-    margin: 5px 0 15px;
+  text-transform: none;
+  color: white;
+  font-weight: 500;
+  line-height: 25px;
+  margin: 5px 0 15px;
 }
 .SmallP {
-    font-size: 13px;
-    margin-left: 5px;
-    margin-top: 5px;
-    color: #535353;
+  font-size: 13px;
+  margin-left: 5px;
+  margin-top: 5px;
+  color: white;
 }
 .SmallP a {
-    color: #111319;
-    font-weight: 500;
+  color: white;
+  font-weight: 500;
 }
 .SmallP a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+.SmallP button {
+  color: white;
+}
+.SmallP button:hover {
+  text-decoration: underline;
+  color: white;
 }
 .Button1 {
-    width: 200px;
-    height: 50px;
-    background-color: #111319;
-    border: none;
-    color: white;
-    outline: none;
-    cursor: pointer;
-    font-size: 16px;
-    text-transform: capitalize;
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #111319;
-    border-radius: 10px;
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  border: none;
+  color: #111319;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: capitalize;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #111319;
+  border-radius: 10px;
 }
-.Button1:hover, .Button1 a:hover {
-    background-color: transparent;
-    color: #111319;
-    box-shadow: 0px 0px 20px rgba(115, 6, 148, 0.473);
+.Button1:hover,
+.Button1 a:hover {
+  background-color: rgb(206, 205, 205);
+  /* box-shadow: 0px 0px 20px rgba(115, 6, 148, 0.473); */
 }
 .Button1:active {
-    box-shadow: none !important;
+  box-shadow: none !important;
 }
 .trial:hover {
-    box-shadow: none !important;
+  box-shadow: none !important;
 }
+
 
 .Chunk1 {
-    position: relative;
-    bottom: 4px;
-    width: 100%;
-    height: 600px;
-    padding: 10px 0 ;
-    margin: auto;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    box-sizing: border-box;
-    vertical-align: baseline;
+  position: relative;
+  bottom: 4px;
+  width: 100%;
+  height: 600px;
+  padding: 10px 0;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  overflow: hidden;
 }
 .Chunk1 div {
-    width: 20%;
-    display: inline-block;
-    padding: 0 70px;
-    text-align: center;
-    color: white;
+  width: 20%;
+  display: inline-block;
+  padding: 0 70px;
+  text-align: center;
+  color: white;
 }
 .Chunk1 h4 {
-    font-size: 18px;
-    font-weight: 400;
-    padding-top: 10px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #adadad;
-    text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #adadad;
+  text-transform: uppercase;
 }
 .Chunk1 p {
-    width: 90%;
-    margin: auto;   
-    font-size: 15px;
-    line-height: 25px;
-    padding-top: 10px;
+  width: 90%;
+  margin: auto;
+  font-size: 15px;
+  line-height: 25px;
+  padding-top: 10px;
 }
 .Chunk2 {
-    position: relative;
-    bottom: 4px;
-    height: 600px;
-    display: inline-block;
-    margin: auto;
-    text-align: center;
-    box-sizing: border-box;
-    vertical-align: baseline;
-    padding: 150px 120px 0 120px;
+  position: relative;
+  bottom: 4px;
+  height: 600px;
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  padding: 150px 120px 0 120px;
 }
 .RememberVector {
-    width: 35%;
-    float: left;
-    padding-left: 30px;
+  width: 35%;
+  float: left;
+  padding-left: 30px;
 }
 .RememberVector img {
-    width: 100%;
+  width: 100%;
 }
 .RememberText {
-    float: right;
-    width: 40%;
-    margin-top: 30px;
-    margin-right: 60px;
-    text-align: left;
+  float: right;
+  width: 40%;
+  margin-top: 30px;
+  margin-right: 60px;
+  text-align: left;
 }
 .RememberText h2 {
-    font-size: 28px;
-    line-height: 1.3em;
-    font-weight: 500;
-    margin-bottom: 10px;
+  font-size: 28px;
+  line-height: 1.3em;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 .RememberText p {
-    width: 90%;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 25px;
-    margin-bottom: 30px;
+  width: 90%;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  margin-bottom: 30px;
 }
-.RememberText a, .Chunk3Footer a {
-    transition: all 0.5s;
-    position: relative;
-    color: #31878d;
-    text-transform: capitalize;
+.RememberText a,
+.Chunk3Footer a {
+  transition: all 0.5s;
+  position: relative;
+  color: #31878d;
+  text-transform: capitalize;
 }
-.RememberText a:after, .Chunk3Footer a:after {
-    content: '🡢';
-    position: absolute;
-    opacity: 0;
-    right: -20px;
-    transition: 0.4s;
+.RememberText a:after,
+.Chunk3Footer a:after {
+  content: "🡢";
+  position: absolute;
+  opacity: 0;
+  right: -20px;
+  transition: 0.4s;
 }
-.RememberText a:hover, .Chunk3Footer a:hover{
-    padding-right: 24px;
-    text-decoration: underline;
+.RememberText a:hover,
+.Chunk3Footer a:hover {
+  padding-right: 24px;
+  text-decoration: underline;
 }
-.RememberText a:hover:after, .Chunk3Footer a:hover:after {
-    opacity: 1;
-    right: 2px;
+.RememberText a:hover:after,
+.Chunk3Footer a:hover:after {
+  opacity: 1;
+  right: 2px;
 }
-
-
 
 .Chunk3 {
-    bottom: 4px;
-    width: 100%;
-    height: 500px;
-    padding: 10px 0 ;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    bottom: 4px;
-    background-color: white;
-    width: 100%;
-    padding: 10px 10%;
-    box-sizing: border-box;
-    margin-right: auto;
-    margin-left: auto;
+  bottom: 4px;
+  width: 100%;
+  height: 500px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 4px;
+  background-color: white;
+  width: 100%;
+  padding: 10px 10%;
+  box-sizing: border-box;
+  margin-right: auto;
+  margin-left: auto;
 }
 .Chunk3 header {
-    width: 50%;
+  width: 50%;
 }
 .Chunk3 h2 {
-    line-height: 30px;
-    margin-bottom: 10px;
+  line-height: 30px;
+  margin-bottom: 10px;
 }
 .Chunk3 header p {
-    width: 90%;
-    font-size: 14px;
-    margin-top: 0;
-    margin-bottom: 40px;
-    font-weight: 500;
+  width: 90%;
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-weight: 500;
 }
 .GridContainer {
-    display: grid;
-    grid-template-areas: "quote logo1 logo2"
-                         "quote logo3 logo4";
-    grid-gap: 2em;
-    grid-template-columns: 50% 22% 22%;
-    grid-template-rows: 45% 45%;
+  display: grid;
+  grid-template-areas:
+    "quote logo1 logo2"
+    "quote logo3 logo4";
+  grid-gap: 2em;
+  grid-template-columns: 50% 22% 22%;
+  grid-template-rows: 45% 45%;
 }
 .Quote {
-    grid-area: quote;
-    background-color: #f7f7f7;
-    padding: 20px;
+  grid-area: quote;
+  background-color: #f7f7f7;
+  padding: 20px;
 }
 .Quote blockquote {
-    width: 80%;
-    font-size: 17px;
-    line-height: 30px;
-    font-style: italic;
-    border-left: 2px solid #e44232;
-    padding-left: 20px;
-    margin-left: 10px;
-    margin-bottom: 40px;
+  width: 80%;
+  font-size: 17px;
+  line-height: 30px;
+  font-style: italic;
+  border-left: 2px solid #e44232;
+  padding-left: 20px;
+  margin-left: 10px;
+  margin-bottom: 40px;
 }
 .Person img {
-    width: 48px;
-    padding-right: 20px;
+  width: 48px;
+  padding-right: 20px;
 }
 .Person div {
-    font-size: 14px;
-    line-height: 8px;
-    display: inline-block;
-    vertical-align: top;
+  font-size: 14px;
+  line-height: 8px;
+  display: inline-block;
+  vertical-align: top;
 }
 .Person p {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 .Logo {
-    background-color: #f7f7f7;
-    text-align: center;
-    display: flex;
-    justify-content: center;
+  background-color: #f7f7f7;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .Logo1 {
-    grid-area: logo1;
+  grid-area: logo1;
 }
 .Logo2 {
-    grid-area: logo2;
+  grid-area: logo2;
 }
 .Logo3 {
-    grid-area: logo3;
+  grid-area: logo3;
 }
 .Logo4 {
-    grid-area: logo4;
+  grid-area: logo4;
 }
 .Chunk3Footer {
-    text-align: center;
-    padding: 20px 50px 60px;
-    vertical-align: middle;
+  text-align: center;
+  padding: 20px 50px 60px;
+  vertical-align: middle;
 }
 .Chunk3Footer h2 {
-    font-weight: 500;
-    margin-bottom: 30px;
+  font-weight: 500;
+  margin-bottom: 30px;
 }
 .Chunk3Footer button {
-    width: 320px;
-    height: 60px;
-    font-size: 18px;
-    font-weight: 500 !important;
-    margin-bottom: 20px;
+  width: 320px;
+  height: 60px;
+  font-size: 18px;
+  font-weight: 500 !important;
+  margin-bottom: 20px;
 }
-
 
 @media (max-width: 1200px) {
-    .Chunk0Text h2 {
-        font-size: 40px;
-        line-height: 50px;
-    }
-    .P {
-        font-size: 14px;
-        line-height: 20px;
-    }
-    .SmallP {
-        font-size: 12px;
-        margin-left: 3px;
-    }    
-    .Button1 {
-        width: 160px;
-        font-size: 14px;
-    }
+  .Chunk0Text h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .P {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .SmallP {
+    font-size: 12px;
+    margin-left: 3px;
+  }
+  .Button1 {
+    width: 160px;
+    font-size: 14px;
+  }
 }
 @media (max-width: 1100px) {
-    .Chunk0Text {
-        position: absolute;
-        top: 3%
-    }
-    .Chunk0Text h2 {
-        font-size: 35px;
-        line-height: 45px;
-        margin-bottom: 0;
-    }
-    .P {
-        font-size: 13px;
-        line-height: 18px;
-        margin-bottom: 12px;
-    }
-
+  .Chunk0Text {
+    position: absolute;
+    top: 3%;
+  }
+  .Chunk0Text h2 {
+    font-size: 35px;
+    line-height: 45px;
+    margin-bottom: 0;
+  }
+  .P {
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 12px;
+  }
 }
 @media (max-width: 980px) {
-    .Chunk0Text h2 {
-        font-size: 30px;
-        line-height: 40px;
-        margin-bottom: 0;
-    }
-    .P {
-        font-size: 12px;
-        line-height: 16px;
-        margin-bottom: 10px;
-    }
-    .SmallP {
-        font-size: 10px;
-        margin-left: 5px;
-    }    
-    .Button1 {
-        width: 140px;
-        height: 40px;
-        font-size: 12px;
-    }
-
+  .Chunk0Text h2 {
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 0;
+  }
+  .P {
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 10px;
+  }
+  .SmallP {
+    font-size: 10px;
+    margin-left: 5px;
+  }
+  .Button1 {
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+  }
 }
 @media (max-width: 850px) {
-    .Chunk0Text {
-        position: absolute;
-        top: 2%
-    }
-    .SmallP {
-        display: none;
-    }    
+  .Chunk0Text {
+    position: absolute;
+    top: 2%;
+  }
+  .SmallP {
+    display: none;
+  }
 }
 @media (max-width: 800px) {
-    .Chunk0Text {
-        position: absolute;
-        top: 1.5%;
-        margin-left: 9%;
-        width: 60%;
-    }
-    .Chunk0Text h2 {
-        font-size: 25px;
-    }
-    .Chunk0Text h2 span {
-        white-space: normal;
-    }
-    .Button1 {
-        margin-left: 50px;
-    }
+  .Chunk0Text {
+    position: absolute;
+    top: 1.5%;
+    margin-left: 9%;
+    width: 60%;
+  }
+  .Chunk0Text h2 {
+    font-size: 25px;
+  }
+  .Chunk0Text h2 span {
+    white-space: normal;
+  }
+  .Button1 {
+    margin-left: 50px;
+  }
 }
 @media (max-width: 651px) {
-    .Chunk0Text {
-        position: absolute;
-        width: 40%;
-        margin-left: 12%;
-    }
-    .Chunk0Text h2 {
-        font-size: 30px;
-    }
-    .Chunk0Text h2 span {
-        white-space: nowrap;
-    }
-    .P {
-        font-size: 16px;
-        padding-bottom: 20px;
-        line-height: 30px;
-        font-weight: 400;
-        color: #111319;
-        margin-bottom: 0;
-        text-align: center;
-    }
-    .SmallP {
-        display: block;
-        color: #111319;
-        font-size: 12px;
-    }    
-    .NarrowViewPortText {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        margin: 0 20px;
-    }
-    .Button1 {
-        width: 90%;
-        height: 50px;
-        font-size: 16px;
-        font-weight: 400;
-        margin-left: 0;
-    }
-
+  .Chunk0Text {
+    position: absolute;
+    width: 40%;
+    margin-left: 12%;
+  }
+  .Chunk0Text h2 {
+    font-size: 30px;
+  }
+  .Chunk0Text h2 span {
+    white-space: nowrap;
+  }
+  .P {
+    font-size: 16px;
+    padding-bottom: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    color: #111319;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .SmallP {
+    display: block;
+    color: #111319;
+    font-size: 12px;
+  }
+  .NarrowViewPortText {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 0 20px;
+  }
+  .Button1 {
+    width: 90%;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 0;
+  }
 }
 @media (max-width: 530px) {
-    .Chunk0Text h2 {
-        font-size: 25px;
-        line-height: 30px;
-    }
-    .P {
-        font-size: 14px;
-        line-height: 25px;
-    }
-    .Button1 {
-        width: 80%;
-        font-size: 14px;
-    }
+  .Chunk0Text h2 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .P {
+    font-size: 14px;
+    line-height: 25px;
+  }
+  .Button1 {
+    width: 80%;
+    font-size: 14px;
+  }
 }
 @media (max-width: 450px) {
-    .Chunk0Text h2 {
-        font-size: 20px;
-        line-height: 25px;
-    }
+  .Chunk0Text h2 {
+    font-size: 20px;
+    line-height: 25px;
+  }
 }
 @media (max-width: 380px) {
-    .Chunk0Text h2 {
-        font-size: 18px;
-        line-height: 20px;
-    }
-    .P {
-        white-space: nowrap;
-        font-size: 12px;
-        line-height: 22px;
-    }
-    .SmallP {
-        margin-top: 10px;
-        font-size: 10px;
-    }
+  .Chunk0Text h2 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .P {
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 22px;
+  }
+  .SmallP {
+    margin-top: 10px;
+    font-size: 10px;
+  }
 }
-
-
