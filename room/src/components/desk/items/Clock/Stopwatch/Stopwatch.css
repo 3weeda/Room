@@ -1,29 +1,35 @@
 .Stopwatch {
     display: block;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 .hide {
     display: none;
 }
 .stopwatchTimer {
-  font-size: 60px;
+  font-size: 80px;
   font-weight: 100;
-  line-height: 120px;
+  line-height: 150px;
   margin: auto;
   background-color: #111319;
-  width: 50%;
+  width: 300px;
+  height: 150px;
+  border-radius: 15px;
+  outline: none;
+  padding: 5px 20px 5px 20px;
 }
 .stopwatchLaps {
 	overflow-y: auto !important;
-	max-height: 60px;
-	flex-wrap: wrap !important;
+	height: 120px !important;
+  flex-wrap: wrap !important;
+  flex-direction: row !important;
 	padding: 20px !important;
 	padding-bottom: 0 !important;
-	width: 95%;
-	margin-left: auto !important;
-	margin-right: auto !important;
-	justify-content: center;
+	width: 90% !important;
+	margin: 10px auto !important;
+  justify-content: center !important;
+  border: solid 2px #111319;
+  border-radius: 15px;
   }
 .stopwatchLap {
   width: 30%;
@@ -31,7 +37,6 @@
   line-height: 30px;
   text-align: center;
   padding-bottom: 5px;
-
 }
 .stopwatchLap strong {
   color: #111319;
@@ -46,7 +51,7 @@
     display: inline-block; 
     width: 72px;
     height: 72px;
-    margin: 24px;
+    margin: 10px;
     margin-bottom: 10px;
     padding: 0;
     cursor: pointer;
