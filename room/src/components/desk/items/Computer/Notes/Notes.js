@@ -1,5 +1,4 @@
 import React from "react";
-// import Masonry from "masonry-layout";
 import createReactClass from "create-react-class";
 import classes from "./Notes.css";
 import Auxiliary from "../../../../../hoc/Auxiliary/Auxiliary";
@@ -15,18 +14,6 @@ const Note = createReactClass({
         </span>
         {this.props.children}
       </div>
-    );
-  }
-});
-const NoteSearch = createReactClass({
-  render() {
-    return (
-      <input
-        className={classes.NoteSearch}
-        type="search"
-        placeholder="Search..."
-        onChange={this.props.onSearch}
-      />
     );
   }
 });
@@ -63,9 +50,9 @@ const NoteEditor = createReactClass({
       checked: false
     };
   },
-  hadleTextChange(e) {
+  handleTextChange(event) {
     this.setState({
-      text: e.target.value
+      text: event.target.value
     });
   },
   hadleColorChange(e, color) {
@@ -80,7 +67,8 @@ const NoteEditor = createReactClass({
       let newNote = {
         about: this.state.text,
         color: this.state.color,
-        id: new Date()
+        id: new Date(),
+        userId: this.props.userId
       };
       this.props.onNoteAdd(newNote);
       this.setState({
@@ -91,6 +79,12 @@ const NoteEditor = createReactClass({
       if (this.state.checked) this.input.checked = false;
     }
   },
+  // Working
+  onKeyDown(e) {
+    if (e.key === "Enter") {
+      this.handleNoteAdd();
+    }
+  },
   render() {
     return (
       <div className={classes.NoteEditor}>
@@ -99,7 +93,8 @@ const NoteEditor = createReactClass({
           placeholder="Enter your note here..."
           rows={5}
           value={this.state.text}
-          onChange={this.hadleTextChange}
+          onChange={this.handleTextChange}
+          onKeyDown={this.onKeyDown}
         />
         <div className={classes.Controls}>
           <NoteColors onColorChanged={this._hadleColorChange} />
@@ -114,43 +109,23 @@ const NoteEditor = createReactClass({
 const NoteGrid = createReactClass({
   getInitialState() {
     return {
-      value: ""
+      val: ""
     };
   },
-  // componentDidMount() {
-  //   this.msnry = new Masonry(this.grid, {
-  //     itemSelector: "#Note",
-  //     columnWidth: 250,
-  //     gutter: 10,
-  //     fitWidth: true,
-  //     initLayout: true
-  //   });
-  //   this.msnry.reloadItems();
-  //   this.msnry.layout();
-  // },
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (
-  //     this.props.notes.length !== prevProps.notes.length ||
-  //     this.state.value.length !== prevState.value.length
-  //   ) {
-  //     this.msnry.reloadItems();
-  //     this.msnry.layout();
-  //   }
-  // },
   handleSearch(e) {
     this.setState({
-      value: e.target.value
+      val: e.target.value
     });
   },
   render() {
-    let searchQuery = this.state.value.toLowerCase();
-    let displayedNotes = !this.state.value
+    let searchQuery = this.state.val.toLowerCase();
+    let displayedNotes = !this.state.val
       ? this.props.notes
       : this.props.notes.filter(function(item) {
           let searchValue = item.about.toLowerCase();
           return searchValue.indexOf(searchQuery) !== -1;
         });
-    console.log(displayedNotes);
+    // console.log(displayedNotes);
     return (
       <Auxiliary>
         <div ref={div => (this.grid = div)} className={classes.NotesGrid}>
@@ -159,14 +134,21 @@ const NoteGrid = createReactClass({
               <Note
                 key={note.id}
                 color={note.color}
-                onDelete={this.props.onNoteDelete.bind(null, note)}
+                onDelete={() => this.props.onNoteDelete(note)}
               >
                 {note.about}
               </Note>
             );
           })}
         </div>
-        <NoteSearch onSearch={this.handleSearch} />
+        {/* Note search */}
+        <input
+          className={classes.NoteSearch}
+          type="search"
+          placeholder="Search..."
+          value={this.state.val}
+          onChange={this.handleSearch}
+        />
       </Auxiliary>
     );
   }
@@ -174,12 +156,29 @@ const NoteGrid = createReactClass({
 const Notes = createReactClass({
   getInitialState() {
     return {
-      // notes: this.props.notes
       notes: []
     };
   },
   componentDidMount() {
     let localNotes = JSON.parse(localStorage.getItem("notes"));
+    //TODO
+    // const queryParams = '?auth=' + this.props.token + '&orderBy="userId"&equalTo="' + this.props.userId + '"';
+    // axios.get("/notes.json")
+    // .then(res =>{
+    // console.log(res.data)
+    // const fetchedNotes = [];
+    // for (let key in res.data) {
+    // 	fetchedNotes.push({
+    //     ...Object.values(res.data[key]),
+    //     id: key
+    // 	})
+    // }
+    // console.log(fetchedNotes)
+    //   this.setState({
+    //     notes: fetchedNotes
+    //   })}
+
+    // );
     if (localNotes) {
       this.setState({
         notes: localNotes
@@ -190,10 +189,10 @@ const Notes = createReactClass({
     this.updateLocalStorage();
   },
   handlePostNote(note) {
-    axios.post("/notes.json", { note })
+    axios
+      .post("/notes.json?", { note })
       .then(res => {
-        console.log(res);
-        console.log(res.data);
+        console.log(note);
       })
       .catch(error => {
         console.log(error);
@@ -201,10 +200,11 @@ const Notes = createReactClass({
   },
   handleDeleteNote(note) {
     let noteId = note.id;
-    //All notes are deleted, not only one
-    axios.delete("notes.json", { data: { id: { noteId } } })
+    // not working again TODO it properly
+    // axios.delete("/notes" + noteId + ".json")
+    axios.delete("/notes.json")
       .then(res => {
-        console.log(noteId);
+        console.log(note);
       })
       .catch(error => {
         console.log(error);
@@ -214,7 +214,7 @@ const Notes = createReactClass({
     });
     this.setState({
       notes: newNotes
-    })
+    });
     //Repost remaining notes again
     newNotes.map(note => {
       return this.handlePostNote(note);
@@ -229,15 +229,12 @@ const Notes = createReactClass({
   render() {
     return (
       <div className={this.props.visible ? classes.NotesApp : classes.hide}>
-        <button className={classes.BackButton} onClick={this.props.backToList}>
-          🡐
-        </button>
-        <h2 className={classes.AppHeader}>Notes App</h2>
+        <h1 className={classes.AppHeader}>Notes App</h1>
         <NoteGrid
           notes={this.state.notes}
           onNoteDelete={this.handleDeleteNote}
         />
-        <NoteEditor onNoteAdd={this.handleNoteAdd} />
+        <NoteEditor onNoteAdd={this.handleNoteAdd} userId={this.props.userId} />
       </div>
     );
   },
