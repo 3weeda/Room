@@ -143,6 +143,21 @@ class StickyNotes extends React.Component {
     JSON.stringify(arr);
     this.setState({ notesStringArray: arr });
   }
+  componentDidMount() {
+    let localStickyNotes = JSON.parse(localStorage.getItem("localStickyNotes"));
+    if (localStickyNotes) {
+      this.setState({
+        notesStringArray: localStickyNotes
+      });
+    }
+  }
+  componentDidUpdate() {
+    this.updateLocalStorage();
+  }
+  updateLocalStorage() {
+    let localStickyNotes = JSON.stringify(this.state.notesStringArray);
+    localStorage.setItem("localStickyNotes", localStickyNotes);
+  }
   render() {
     return (
       <div className={classes.StickyNotes}>
