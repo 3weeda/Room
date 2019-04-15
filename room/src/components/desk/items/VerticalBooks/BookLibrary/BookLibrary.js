@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./BookLibrary.css";
-// import Auth from "../../../../../Auth0/Auth0";
 
 const Result = ({ thumbnail, title }) => (
   <div className={classes.Result}>
@@ -49,9 +48,6 @@ class BookLibrary extends React.Component {
   }
 
   render() {
-    // const auth = new Auth();
-    // auth.login();
-
     return (
       <div className={classes.BookLibrary}>
         Search Google Book Api:{" "}
