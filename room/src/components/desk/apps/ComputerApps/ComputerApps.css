@@ -1,16 +1,3 @@
-.box {
-  position: relative;
-	top: 100px;
-	right: 10px;
-	display: flex;
-	flex-wrap: nowrap;
-	/* not working */
-  justify-content: center;
-  margin: 0 10px;
-}
-.hide {
-  display: none !important;
-}
 .Computer {
 	width: 400px;
 	text-align: center;
@@ -18,41 +5,4 @@
   box-sizing: border-box;
   filter: brightness(90%);
   z-index: 101;
-}
-.Apps {
-  width: 65%;
-  height: 500px;
-	border-radius: 15px;
-	display: flex;
-  flex-direction: row;
-  z-index: 101;
-}
-.AppThumbnails {
-	width: 15%;
-  display: inline-block;
-  list-style: none;
-  padding: 0;
-}
-.AppThumbnails li {
-  background-color:#111319;
-	height: 70px;
-	width: 70px;
-	margin: 10px;
-  border-radius: 50%;
-  color: white;
-  font-size: 18px;
-  font-weight: 300;
-  text-align: center;
-  /* REVELATION! */
-  line-height: 70px;
-  cursor: pointer;
-}
-.AppThumbnails li:hover {
-  background-color: #444b61;
-}
-.AppViewer {
-	width: 82%;
-	display: inline-block;
-  background-color: #444b61;
-  border-radius: 15px;
 }
