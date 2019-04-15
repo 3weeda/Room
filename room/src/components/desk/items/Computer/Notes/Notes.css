@@ -5,6 +5,7 @@
   box-sizing: border-box;
   margin: 20px 0;
   text-align: center;
+  color: #111319 !important;
 }
 .hide {
   display: none;
