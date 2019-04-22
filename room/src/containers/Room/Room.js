@@ -24,6 +24,7 @@ import StickyNotes from "../../components/desk/items/Computer/StickyNotes/Sticky
 import Plant2 from "../../components/desk/items/Plant2/Plant2";
 import ComputerApps from "../../components/desk/apps/ComputerApps/ComputerApps";
 import ClockApps from "../../components/desk/apps/ClockApps/ClockApps";
+import VerticalBooksApps from "../../components/desk/apps/VerticalBooksApps/VerticalBooksApps";
 
 class Room extends Component {
   state = {
@@ -80,12 +81,7 @@ class Room extends Component {
             />
             <Chair />
             <Shelf />
-            <VerticalBooks
-              nightMode={this.props.nightMode}
-              zoomIn={this.props.onDeskBooksZoomIn}
-              zoomOut={this.props.onZoomOut}
-              elementZoomed={this.props.deskBooks}
-            />
+            <VerticalBooks zoomIn={() => this.zoomInHandler("2")} />
             <Kandle
               nightMode={this.props.nightMode}
               zoomIn={this.props.onKandleZoomIn}
@@ -129,6 +125,10 @@ class Room extends Component {
           <ClockApps
             visible={this.state.visible1}
             zoomOut={() => this.zoomOutHandler("1")}
+          />
+          <VerticalBooksApps
+            visible={this.state.visible2}
+            zoomOut={() => this.zoomOutHandler("2")}
           />
         </div>
       </Layout>
