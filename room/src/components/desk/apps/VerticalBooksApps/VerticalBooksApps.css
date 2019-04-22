@@ -1,0 +1,27 @@
+.VerticalBooks {
+    width: 300px;
+    margin: auto;
+    z-index: 104;
+    margin-left: 50px;
+    cursor: pointer;
+    box-sizing: border-box;
+    filter: brightness(100%);
+    transition: transform 0.25s ease;
+    cursor: auto;
+    text-align: center;
+  }
+  .Apps {
+    width: 90% !important;
+  }
+  .Thumbnails {
+    width: 5% !important;
+  }
+  .AppViewer {
+    width: 90%;
+    text-align: center;
+    overflow: hidden;
+  }
+  .AppViewer ol {
+    list-style: none;
+    padding-left: 0;
+  }
