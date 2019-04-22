@@ -6,7 +6,7 @@ import ToDoList from "../../items/Computer/ToDoList/ToDoList";
 import Notes from "../../items/Computer/Notes/Notes";
 import Calculator from "../../items/Computer/Calculator/Calculator";
 import classes from "./ComputerApps.css";
-import Backdrop from "../../../../UI/Backdrop/Backdrop";
+import Applications from "../../../../hoc/Applications/Applications"
 
 const apps = [
   { app: "Todo", number: "" },
@@ -34,47 +34,44 @@ class ComputerApps extends Component {
     this.setState(this.baseState);
   };
   render() {
+    const appSvg = (<ReactSVG src={svg} svgStyle={{ width: "85%" }} />);
+    let appThumbnails = (
+      apps.map(app => (
+        <li
+          key={app.number}
+          onClick={() => this.ShowAppHandler(app.number)}
+          style={{
+            backgroundColor: this.state["visible" + app.number]
+              ? "#444b61"
+              : null
+          }}
+        >
+          {app.app}
+        </li>
+      ))
+    )
     return (
-      <div className={this.props.visible ? classes.box : classes.hide}>
-        <Backdrop visible={this.props.visible} clicked={this.props.zoomOut} />
-        <div className={classes.Computer} onClick={this.props.zoomIn}>
-          <ReactSVG src={svg} svgStyle={{ width: "90%" }} />
-        </div>
-        <div className={classes.Apps}>
-          <ul className={classes.AppThumbnails}>
-            {apps.map(app => (
-              <li
-                key={app.number}
-                onClick={() => this.ShowAppHandler(app.number)}
-                style={{
-                  backgroundColor: this.state["visible" + app.number]
-                    ? "#444b61"
-                    : null
-                }}
-              >
-                {app.app}
-              </li>
-            ))}
-          </ul>
-          <div
-            className={
-              this.state === this.baseState ? classes.hide : classes.AppViewer
-            }
-          >
-            <ToDoList visible={this.state.visible} userId={this.props.userId} token={this.props.token} />
-            <Notes visible={this.state.visible1} userId={this.props.userId} token={this.props.token} />
-            <Calculator visible={this.state.visible2} />
-          </div>
-        </div>
-      </div>
+      <Applications
+        visible={this.props.visible}
+        zoomOut={this.props.zoomOut}
+        zoomIn={this.props.zoomIn}
+        appClass={classes.Computer}
+        appSvg={appSvg}
+        appThumbnails={appThumbnails}
+        viewAppsCondition={this.state === this.baseState}
+      >
+        <ToDoList visible={this.state.visible} userId={this.props.userId} token={this.props.token} />
+        <Notes visible={this.state.visible1} userId={this.props.userId} token={this.props.token} />
+        <Calculator visible={this.state.visible2} />
+      </Applications>
     );
   }
 }
 
 const mapStateToProps = state => {
   return {
-      token: state.auth.token,
-      userId: state.auth.userId
+    token: state.auth.token,
+    userId: state.auth.userId
   }
 }
 
