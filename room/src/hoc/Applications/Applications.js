@@ -9,11 +9,12 @@ const Applications = (props) => {
             <div className={props.appClass} onClick={props.zoomIn}>
                 {props.appSvg}
             </div>
-            <div className={classes.Apps}>
-                <ul className={classes.AppThumbnails}>
-                    {props.appThumbnails}
+            <div className={[classes.Apps, props.AppsClassName].join(" ")}>
+                <ul className={[classes.AppThumbnails, props.ThumbsClassName].join(" ")}>
+                    {props.appThumbnails ? props.appThumbnails : null}
                 </ul>
-                <div className={props.viewAppsCondition ? classes.hide : classes.AppViewer}>
+                <div className={props.viewAppsCondition ? classes.hide
+                    : [classes.AppViewer, props.AppViewerClassName].join(" ")}>
                     {props.children}
                 </div>
             </div>
