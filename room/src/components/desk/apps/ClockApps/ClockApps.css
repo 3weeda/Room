@@ -23,7 +23,8 @@
 }
 .Time h2 {
     font-weight: 300 !important;
-    margin-top: 0;
+    position: relative;
+    bottom: 50px;
 }
 .Watch {
     display: flex;
