@@ -1,0 +1,194 @@
+.bookShelfChanger {
+  position: relative !important;
+  left: 190px !important ;
+  bottom: 30px !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #111319;
+  background-image: url("../../../../../../assets/svg/arrow-drop-down.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.bookShelfChanger select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  background-color: #111319;
+  color: white;
+}
+.article {
+  width: 100%;
+  max-width: 16rem;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 1px;
+  color: #333;
+  border-color: rgba(0, 0, 0, 0.1);
+  margin: 30px 10px;
+  background-color: #fff;
+  padding: 10px 10px;
+}
+.bookCover {
+  width: 100%;
+  display: block;
+  border-radius: 0.25rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin: auto;
+}
+.hint {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.tableCell {
+  display: table-cell;
+}
+.table {
+  display: table;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+.bookInfo {
+  padding: 0.5rem;
+}
+.authorName {
+  max-width: 30em;
+  color: #555;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.moreInfo {
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  background: #00449e;
+  color: white;
+  padding: 10px;
+}
+.moreInfo:hover {
+  background-color: #0354be;
+}
+.ba {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.b--black-10 {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.br2 {
+  border-radius: 0.25rem;
+}
+
+.br--top {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.db {
+  display: block;
+}
+
+.dt {
+  display: table;
+}
+.dtc {
+  display: table-cell;
+}
+
+.lh-copy {
+  line-height: 1.5;
+}
+
+.mw5 {
+  max-width: 16rem;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.dark-gray {
+  color: #333;
+}
+
+.mid-gray {
+  color: #555;
+}
+
+.pa2 {
+  padding: 0.5rem;
+}
+
+.mt1 {
+  margin-top: 0.25rem;
+}
+
+.mt2 {
+  margin-top: 0.5rem;
+}
+
+.mv0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mv4 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tr {
+  text-align: right;
+}
+
+.f5 {
+  font-size: 1rem;
+}
+
+.f6 {
+  font-size: 0.875rem;
+}
+
+.measure {
+  max-width: 30em;
+}
+
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 30em) {
+  .bookInfo {
+    padding-bottom: 1rem;
+  }
+
+  .bookInfo {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .f4-ns {
+    font-size: 1.25rem;
+  }
+}
+
+/* @media screen and (min-width: 30em) and (max-width: 60em) {
+  .w-50-m {
+    width: 50%;
+  }
+} */
+
+/* @media screen and (min-width: 60em) {
+  .w-25-l {
+    width: 25%; 
+  }
+} */

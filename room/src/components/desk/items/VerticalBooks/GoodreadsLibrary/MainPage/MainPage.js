@@ -25,7 +25,8 @@ class MainPage extends Component {
               <div className={classes.listBooksTitle}>
                 <h1>Library</h1>
               </div>
-              <div title="Add a new book" className={classes.openSearch} onClick={this.props.showPage}>
+              <div className={classes.openSearch} onClick={this.props.showPage}>
+              <span className={classes.searchButtonText}><p>ADD BOOKS</p></span>
               </div>
               <div className={classes.listBooksContent}>
                 <div className={classes.libraryBody}>

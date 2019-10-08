@@ -68,7 +68,7 @@ class app extends Component {
 
 	render() {
 		return (
-			<div style={{height: "100%", overflow: "auto"}}>
+			<div style={{height: "100%", overflow: "auto", paddingRight: "10px"}}>
 				<MainPage
 					visible={this.state.MainPage}
 					showPage={this.showSearchPageHandler}

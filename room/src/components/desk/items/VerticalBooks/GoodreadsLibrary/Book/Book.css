@@ -1,0 +1,110 @@
+.article:before,
+.article:after {
+  content: " ";
+  display: table;
+}
+
+.article:after {
+  clear: both;
+}
+
+.article {
+  *zoom: 1;
+}
+.article {
+  Background-color: #111319 !important;
+  color: white;
+  align-items: center !important;
+  justify-content: center !important;
+  align-content: center !important;
+  width: 85% !important;
+  margin: 70px auto !important;
+  padding: 30px 40px !important;
+  border-radius: 10px;
+}
+.bookTitle {
+  color: white !important;
+}
+p {
+  font-size: 1rem;
+  word-spacing: 3px;
+  font-weight: 300 !important;
+}
+.Back {
+  display: block;
+  position: relative;
+  bottom: 10px;
+  right: 20px;
+  width: 50px;
+  height: 53px;
+  background: #444b61;
+  border-top-left-radius: 15px;
+  background-image: url("../../../../../../assets/svg/arrow-back.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28px;
+  font-size: 0;
+  cursor: pointer;
+}
+.Container {
+  margin: auto !important;
+  padding: 0 30px !important;
+}
+.Header {
+  width: 40% !important;
+  margin: auto !important;
+}
+.Description {
+  width: 100% !important;
+  text-align: left;
+  line-height: 25px !important;
+}
+.Table {
+  display: table;
+  margin: 0 auto 20px !important;
+  border: solid 3px #444b61 !important;
+}
+.Thumbnail {
+  display: table-cell;
+  vertical-align: middle;
+  margin: auto !important;
+  height: 300px !important;
+  min-width: 200px !important;
+  border: none !important;
+}
+.BookDetail {
+  border-bottom: solid 3px #444b61 !important;
+  padding-bottom: 16px;
+  margin-bottom: 0;
+}
+.learnMore {
+  color: #667196;
+}
+.learnMore:hover {
+  color: #8799d3;
+}
+@media screen and (max-width: 60em) {
+  .Header {
+    width: 100% !important;
+    margin: auto !important;
+    float: none !important;
+  }
+  .Description {
+    width: 100% !important;
+    margin: auto !important;
+  }
+  .Back {
+    margin-top: 20px;
+  }  
+}
+@media screen and (max-width: 40em) {
+  .bookTitle {
+    font-size: 26px !important;
+    margin-top: 10px !important;
+    text-align: center !important;
+  }
+  .Container {
+    padding: 0 10px !important;
+  }
+}
+

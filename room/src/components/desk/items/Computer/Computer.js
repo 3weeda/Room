@@ -3,10 +3,6 @@ import ReactSVG from "react-svg";
 import svg from "../../../../assets/svg/15-computer.svg";
 import classes from "./Computer.css";
 import Tag from "../../../../Shared/Tag/Tag";
-// import Modal from "../../../../UI/Modal/Modal";
-// import ToDoList from "./ToDoList/ToDoList";
-// import Notes from "./Notes/Notes";
-// import Calculator from "./Calculator/Calculator";
 
 class Computer extends Component {
   state = {

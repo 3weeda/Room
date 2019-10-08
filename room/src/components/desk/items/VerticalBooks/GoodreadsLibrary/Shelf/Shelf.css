@@ -67,8 +67,11 @@
   flex-wrap: wrap;
 }
 .booksGrid li {
-  padding: 10px 10px;
+  padding: 0 20px;
   text-align: center;
+  /* TODO: check ctrl+shift+c here */
+  position: relative;
+  right: 10px;
 }
 
 .bookShelfChanger {

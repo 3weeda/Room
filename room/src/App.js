@@ -17,18 +17,16 @@ class App extends Component {
         <div className="App">
           <Switch>
             {/* TODO: this is temp solution for showing room on logging in */}
-            {this.props.isAuthenticated ? (
+
+            <Auxiliary>
               <Route path="/room" component={Room} />
-            ) : (
-              <Auxiliary>
-                <Route path="/tour" component={HowItWorks} />
-                <Route path="/about" component={About} />
-                <Route path="/plans" component={Plans} />
-                <Route path="/" exact component={Home} />
-                <Redirect to="/" />
-              </Auxiliary>
+              <Route path="/tour" component={HowItWorks} />
+              <Route path="/about" component={About} />
+              <Route path="/plans" component={Plans} />
+              <Route path="/" exact component={Home} />
+              <Redirect to="/" />
+            </Auxiliary>
             )}
-            {this.props.isAuthenticated ? <Redirect to="/room" /> : null}
           </Switch>
         </div>
       </StyleRoot>

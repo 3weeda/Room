@@ -10,7 +10,7 @@ const NavigationItems = (props) => {
             <NavigationItem nightMode={props.nightMode} link="/tour">How It Works</NavigationItem>
             <NavigationItem nightMode={props.nightMode} link="/plans">Plans</NavigationItem>
             <NavigationItem nightMode={props.nightMode} link="/about">About Us</NavigationItem>
-            {props.isAuth ? <NavigationItem nightMode={props.nightMode} link="/room">Room</NavigationItem> : null}
+            <NavigationItem nightMode={props.nightMode} link="/room">Room</NavigationItem>
             {!props.isAuth ? <Button
                 btnType={props.nightMode ? "LoginNightMode" : "Login"}
                 clicked={props.showSignin}>Log in</Button> : null}
